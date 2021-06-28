@@ -1,0 +1,25 @@
+version: "2.0"
+
+stories:
+
+- story: ask weather in city
+  steps:
+  - intent: weather_in_city
+  - action: action_weather
+ 
+- story: ask weather without city 
+  steps:
+  - intent: weather_without_city
+  - action: city_form
+  - action: action_weather 
+
+- story: ask misty what can he do
+  steps:
+  - intent: capabilities
+  - action: utter_capabilities
+
+- story: ask misty to introduce himself
+  steps:
+  - intent: who_are_you
+  - action: utter_im_misty
+ 
