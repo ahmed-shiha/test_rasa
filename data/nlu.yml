@@ -1,128 +1,275 @@
-version: "2.0"
-
+version: "3.1"
 nlu:
+- intent: start
+  examples: |
+    - /start
+    - start
 - intent: greet
   examples: |
-    - hey
-    - hello
-    - hi
-    - hello there
-    - good morning
-    - good evening
-    - morning
-    - hey there
-    - let's go
-    - hey dude
-    - goodmorning
-    - goodevening
-    - good afternoon
-
+    - السلام عليكم
+    - صباح الخير
+    - أهلا وسهلا
+    - هلا ومرحبا
+    - إزيك
+    - اهلين
+    - شلونك
+    - هلا وغلا
+    - وعليكم السلام ورحمة الله وبركاته
+    - وعليكم السلام
+    - اهلًا وسهلًا
+    - مرحبا
+    - مرحبتين
+    - أزيك يا حبيبي
+    - عامل ايه؟
+    - ايه الأخبار؟
+    - اخبارك ايه؟
 - intent: goodbye
   examples: |
-    - good afternoon
-    - cu
-    - good by
-    - cee you later
-    - good night
-    - bye
-    - goodbye
-    - have a nice day
-    - see you around
-    - bye bye
-    - see you later
-    - thank you
-    - thanks 
-
-- intent: weather_in_city
-  examples: |
-    - whats is the weather in [Singapore](city)
-    - how is the weather condition in [Malaysia](city)
-    - temperature in [Thailand](city)
-    - tell me the temperature in [Singapore](city)
-    - weather in [Malaysia](city)
-    - how is [Singapore](city) today
-    - i want to know the temperature in [Thailand](city)
-    - what is the weather like in [Singapore](city)
-
-- intent: weather_without_city
-  examples: |
-    - what's the weather
-    - i wan to know the weather of today
-    - what is the temperature today
-    - what is the temperature currently
-    - i wan to know the temperature of today
-    - hows the weather today
-    - tell me the weather forecast
-    - what os the weather like
-
-- intent: capabilities
-  examples: |
-    - what can you do
-    - what are your capabilities
-    - what are you good at
-    - what are you good for
-    - any instructions
-    - instructions
-    - how do i use this
-    - info
-    - information
-    - help
-    - can you help me
-
-#Unused for now 
+    - مع السلامة
+    - مع الف سلامة
+    - تصبح على خير
+    - تصبحي على خير
+    - بالتوفيق
+    - أراك لاحقا
+    - إلى اللقاء
+    - وداعاً
+    - السلام عليكم ورحمة الله وبركاته
+    - أراك لاحقاً
+    - في أمان الله
+    - أسأل الله لك التوفيق والنجاح
+    - حفظك الله
+    - براحة
+    - يعطيك العافية
+    - سلملي على الكويت
+    - يلا سلام
+    - تحياتي
+    - على راسي
+    - باي
 - intent: affirm
   examples: |
-    - yes
-    - y
-    - indeed
-    - of course
-    - that sounds good
-    - correct
-#Unused for now 
+    - نعم
+    - بالتأكيد
+    - صحيح
+    - حسنًا
+    - طبعًا
+    - يوم
+    - أجل
+    - آيوه
+    - أكيد
+    - تمام
+    - أيوا
+    - أوكي
+    - حلو
+    - يمكن
 - intent: deny
   examples: |
-    - no
-    - n
-    - never
-    - I don't think so
-    - don't like that
-    - no way
-    - not really
-
-- intent: misty_dance_intent
+    - ما أبيه
+    - ما أقدر
+    - ما يصير
+    - ما أقدر أسويها
+    - ما بغيت
+    - مو معقول
+    - مَا أقدِر
+    - لا
+    - لا شكراً
+    - لا يمكن
+    - مش ممكن
+    - مش هنعمل كدة
+    - مش عاوزين
+    - ماشي
+    - مش هنقدر
+- intent: mood_great
   examples: |
-    - dance please
-    - can you dance?
-    - dance
-    - please dance   
-
-
-- synonym: temperature
+    - أشعر بالرضا
+    - أنا سعيد جداً
+    - أنا في حالة مزاجية رائعة
+    - أنا أشعر بالسعادة
+    - أنا مبسوط جداً
+    - أشعر بالتفاؤل
+    - أنا في قمة السعادة
+    - أنا أشعر بالامتنان
+    - أنا مبسوط ولا على بالي
+    - راضي بحالي والحمدلله
+    - أنا فرحان قوي
+    - أنا في قمة الأحساس
+    - أنا متحمس ومبسوط
+    - أنا في أحلى حالاتي
+    - أنا سعيد قوي
+    - أنا بخير وسعيد
+    - طيب
+    - أنا في راحة
+    - أنا فرحان
+    - أنا بخير والحمدلله
+    - أنا مبسوط قوي
+    - أنا مرتاح
+- intent: request_names
   examples: |
-    - hot
-    - cold
-    - chilly
-    - heat
-    - temp
-    - temperature
-
-- synonym: weather
+    - اريد أن أعطي اسمي
+    - اسمي
+    - هل تريد معرفة اسمي
+    - هل تعرف اسمي
+- intent: ask_feeling_test
   examples: |
-    - weather
-    - forecast
-
-- synonym: Singapore
+    - أريد اختبار حالتي
+- intent: ask_ocd_test
   examples: |
-    - Singapore
-    - singapore
-
-
-- synonym: Malaysia
+    - أريد اختبار الوسواس
+- intent: ask_classifier
   examples: |
-    - Malaysia
-    - malaysia
-
-- synonym: Thailand
+    - أريد تشغيل المصنف
+- intent: ask_gad_test
   examples: |
-    - Thailand
-    - thailand
+    - أريد إجراء اختبار القلق
+- intent: ask_phq9_test
+  examples: |
+    - أريد إجراء اختبار الاكتئاب
+- intent: ask_docotor_prefer
+  examples: |
+    - أنا مصاب بالاكتئاب وأريد حجز جلسه علاجية
+    - أريد حجز جلسة علاجية
+    - أريد أن أتحدث مع دكتور
+- intent: Ending_the_conversation
+  examples: |
+    - أريد إنهاء المحادثة
+    - لا أريد أن أكمل
+    - لن أكمل
+    - إيقاف المحادثة
+- intent: Conducting_a_test
+  examples: |
+    - أريد إجراء اختبار نفسي
+    - اختبار نفسي
+    - اختبار نفساني
+- intent: dont_want_to_continue
+  examples: |
+    - لا أريد إجراء الاختبار
+- intent: mood_unhappy
+  examples: |
+    - أشعر بالحزن
+    - أنا حزين جداً
+    - أنا في حالة مزاجية سيئة
+    - أشعر بالاكتئاب
+    - أشعر بالضيق
+    - أنا محبط جداً
+    - أشعر بالتعاسة
+    - أنا في حالة حزن شديدة
+    - أنا تعيس
+    - أنا في حالة نفسية سيئة
+    - أشعر بالزعل قوي
+    - أنا في قلبي حزن
+    - أنا بتمنى اللحظة دي تخلص
+    - أنا محزن جداً
+    - أنا مش فارقة معايا حاجة
+    - أنا مش بحس بالراحة
+    - أنا تعسان
+    - أنا محزن قوي
+    - أنا متأثر بشيء
+    - أنا مشتاق لشيء
+    - أنا متضايق
+    - أنا مكتئب
+    - أنا مش عايش حالتي
+    - أشعر بالقلق الشديد من كل شيء حياتي عبارة عن قلق مستمر قلقان جدا ومتوتر توتر شديد
+    - توتر
+    - أشعر بالاكتئاب الشديد ، كل شيء في حياتي كئيب للغاية ، حياة بائسة لا معنى لها
+    - كيف أخرج من حالة الاكتئاب
+    - أشعر بأنني أعاني من حالة صعبة جدا لم أعد أطيق الحياة كل حياتي أصبحت شديدة الصعوبة ولا تطاق كل شيء يفسد أفضل الموت على أن أكمل السير
+    - أشعر أن لدي ميول انتحارية شديدة فقط وكل دقيقة أفكر في أن أنتحر وأنهي حياتي
+    - حاسس إني متوتر وبشك في كل حاجة في وسواس بيراودني في العبادات بالذات لو صليت بشكل بشك صليت كام ركعة ولو اتويت بفضل ساعة كاملة علشان أقدر أخلص
+    - أحس باكتئاب حاد في نفسيتي ولم أعد قادرة على التواصل مع زوجي فما الحل
+    - ضغط وانتقادات من كل الجهات فبدون إدراك أعطيت الأولوية للأمور الثانوية نجحت في لاثانوية العاملة بمعدل سيء فصدمت ولم أرض بأن ألتحق بكلية عادية فجلست في لابيت أنتظر العام المقبل مضت السنين وحصلت على رفضل لاستلام الفيزا أقراني يستمورن في الدراسة وأنا واقفة مكاني حزن شديد واكتئاب من هذه الحياة
+    - أحس بتوتر شديد وتعرق دائم عند كل موقف كلما كان هناك عمل ينبغي أن أفعله إن سمعت شخصا مات أشعر بحالة خوف شديدة وتوتر وتخيلات تمنعني من النوم أما في الأيام الأخرى فأعاني من توتر شديد ونظرة مظلمة للمستقبل
+- intent: bot_challenge
+  examples: |
+    - إنت برنامج ولا إنت حقيقي؟
+    - أنت روبوت صح؟
+    - وش فيك وأنت ترد بالتلقائي؟
+    - هل أنت مبرمج ترد تلقائياً؟
+    - هل هذا حوار مع جهاز كمبيوتر؟
+    - أنت مصمم للرد الآلي؟
+    - هل هذا رد تلقائي؟
+    - من أنت؟
+    - ممكن تشرح لي من أنت؟
+    - أريد معرفة هويتك
+    - من الذي يتحدث معي؟
+    - انت مين؟
+- intent: express_gratitude
+  examples: |
+    - أشكرك على وقتك
+    - معلومة مفيدة شكرا لك
+    - أنا ممتن لك للاستماع إلي
+    - شكراً لكونك متواجدًا
+- intent: optionA
+  examples: |
+    - let me see option A
+    - can you show me option A please
+    - please show me option A
+    - A please
+- intent: optionB
+  examples: |
+    - let me see option B
+    - can you show me option B please
+    - please show me option B
+    - B please
+- intent: optionC
+  examples: |
+    - let me see option C
+    - can you show me option C please
+    - please show me option C
+    - C please
+- intent: optionD
+  examples: |
+    - let me see option D
+    - can you show me option D please
+    - please show me option D
+    - D please
+- intent: optionE
+  examples: |
+    - let me see option E
+    - can you show me option E please
+    - please show me option E
+    - E please
+- intent: price
+  examples: |
+    - 100
+    - 300
+    - 200
+    - 1000
+    - 2000
+- intent: choose_option
+  examples: |
+    - إنهاء المحادثة
+    - حجز جلسة علاجية
+    - اقتراح مواد مساعدة (فيديو - مقال - نصائح)
+    - أخرى
+- intent: diagnosing
+  examples: |
+    - تشخيص
+    - أريد إجراء تشخيص
+    - أريد تشخيص حالتي
+- intent: Conducting a self-assessment
+  examples: |
+    - إجراء اختبار نفسي
+- intent: Ending the conversation
+  examples: |
+    - إنهاء المحادثة
+- intent: Booking a therapy session
+  examples: |
+    - حجز جلسة علاجية
+- intent: Suggesting supporting materials (video - article - tips)
+  examples: |
+    - اقتراح مواد مساعدة (فيديو - مقال - نصائح)
+- intent: other
+  examples: |
+    - أخرى
+    - لا أريد أيا من هذه الخيارات
+- intent: read_article
+  examples: |
+    - أريد قراءة مقال عن المرض
+    - أريد مقالا
+    - أحتاج إلى مقال
+- intent: deny_doctor
+  examples: |
+    - لا أريد الدكتور
+    - لا أريد حجز عيادة
+- intent: deny_article
+  examples: |
+    - لا أريد مقالا
