@@ -1,57 +1,1068 @@
-version: "2.0"
+version: '3.1'
+intents:
+- Assessment_Start
+- Booking_a_therapy_session
+- Conducting_a_self_assessment
+- Conducting_a_test
+- Ending_the_conversation
+- Suggesting_supporting_materials
+- affirm
+- ask_classifier
+- ask_docotor_prefer
+- ask_feeling_test
+- ask_gad_test
+- ask_ocd_test
+- ask_phq9_test
+- bot_challenge
+- choose_option
+- deny
+- deny_article
+- deny_doctor
+- diagnosing
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+- optionA
+- optionB
+- optionC
+- optionD
+- optionE
+- other
+- price
+- read_article
+- request_names
+responses:
+  utter_great:
+  - text: يسعدني سماع ذلك ، أتمنى لك دوام الصحةوالعافية
+    channel: myio
+  utter_greet:
+  - text: مرحبا بك . أنا سلام بوت للتقييم والمساعدة النفسية
+  utter_Assessment_Start:
+  - text: |
+      بالطبع، يمكننا بدء تقييم صحتك النفسية. هل تفضل أن نبدأ ببعض الأسئلة؟
+  utter_goodbye:
+  - text: |
+      وداعًا! إذا كنت بحاجة إلى مساعدة أخرى في المستقبل، لا تتردد في العودة.
+  utter_affirm:
+  - text: |
+      نعم، فهمت. إذا كنت بحاجة إلى شيء آخر، أنا هنا للمساعدة.
+  utter_deny:
+  - text: |
+      حسنًا، إذا كنت بحاجة إلى توضيح أو مساعدة إضافية، فأنا هنا للمساعدة.
+  utter_mood_great:
+  - text: |
+      يسعدني أن أسمع ذلك! إذا كان هناك شيء يمكنني مساعدتك فيه، فأنا في الخدمة.
+  utter_good_article:
+  - text: |
+      يسعدني سماع ذلك
+  utter_refer_to_doctor:
+  - buttons:
+    - payload: /ask_docotor_prefer
+      title: نعم
+    - payload: /deny
+      title: لا
+    button_type: vertical
+    text: هل ترغب في التواصل مع دكتور نفسي لمتابعة حالتك ؟
+  utter_mood_unhappy:
+  - text: |
+      أنا هنا لدعمك. حدثني عن ما تشعر به حتى نقوم بتقييم حالتك.
+  utter_bot_challenge:
+  - text: |
+      نعم، أنا روبوت! ولكنني هنا لتقديم المساعدة والدعم. هل هناك شيء آخر يمكنني فعله لك؟
+  utter_general_advice:
+  - text: |
+      لا تنسى أن تعتني بصحتك العقلية بنفس الاهتمام الذي توليه لصحتك الجسدية. احرص على أخذ قسط من الراحة والاسترخاء يوميًا. قم بممارسة التمارين الرياضية بانتظام وتناول طعامًا صحيًا. لا تتردد في طلب المساعدة إذا كنت تشعر بأي ضغوط نفسية. الحفاظ على صحة عقلية جيدة هو جزء أساسي من العيش بحياة سعيدة ومتوازنة.
+      لا تنس أن تكتب أهدافًا واضحة ومحددة وابذل جهدًا لتحقيقها. تحديد الأهداف يمكن أن يوجهك نحو النجاح والتحسن الشخصي.
+      حافظ على تواصل جيد مع أصدقائك وعائلتك. قضاء الوقت مع من تحب يساعد على تقوية العلاقات الاجتماعية والعاطفية
+  utter_thanking:
+  - text: شكرا لك ،التعبير عن شعورك يساعد على تخفيف حالتك ويساعد المتخصصين على تشخيصها
+  utter_diagnosing:
+  - text: استنادًا إلى المعلومات التي قدمتها، سيتم الآن تقييم حالتك ثم سنتابع معا
+  utter_mental_issue:
+  - text: الاختبار يشير إلى أنك تعاني من {sentiment_1}
+  utter_express_gratitude:
+  - text: شكرًا لك! أنا هنا لخدمتك. إذا كان لديك أي سؤال آخر، فلا تتردد في طرحه.
+  utter_ask_first_name:
+  - text: هل يمكن أن تخبرني باسمك
+  utter_submit:
+  - text: Ok. Thanks!
+  utter_slots_values:
+  - text: أهل بك يا {first_name}!
+  utter_ask_feeling_1:
+  - text: أنا هنا لدعمك. حدثني عن ما تشعر به حتى نقوم بتقييم حالتك
+  utter_ask_feeling_2:
+  - text: هل لديك شيء آخر ترغب في قوله؟ كلما عبّرت عن مشاعرك، كلما كنت قادرًا على تقديم المزيد من المساعدة.
+  utter_submit_feeling:
+  - text: سيتم تقييم حالتك بناء على الوصف الذي قدمته
+  utter_launch_suicide_test:
+  - text: اجراء اختبار الانتحار
+  utter_providing_test:
+  - text: بالتأكيد إجراء الاختبار قد يكون خطوة مفيدة جدا
+  utter_launch_test:
+  - text: سيتم تحويلك إلى اختبار قصير للتأكد من حالتك
+  utter_ocd_result:
+  - text: نتائج الاختبار تشير إلى أنك تعاني من أعراض وسواس قهري شديدة تحتاج إلى العلاج
+  utter_doctor:
+  - text: النتائج التالية تتوافق مع اختياراتك
+  utter_view_doctor_results:
+  - text: استنادًا إلى تفضيلاتك، إليك بيانات الأطباء المتناسبين الذين يمكنهم مساعدتك . ويمكنك الحصول على المزيد من المعلومات عن كل طبيب من خلال الصفحة الخاصة به بالضغط على الرابط
+  utter_doctor_results:
+  - text: د. هبة الزيني - الفردوس - يمكنك الدخول إلى صفحة الحجز  [من هنا] (https://www.google.com/)
+  utter_ask_doctor:
+  - buttons:
+    - payload: /affirm
+      title: نعم
+    - payload: /deny
+      title: لا
+    button_type: vertical
+    text: هل ترغب في حجز جلسه علاجية مع متخصص ؟
+  utter_launch_ocd_test:
+  - text: اجراء اختبار الوسواس
+  utter_launch_depression_test:
+  - text: اجراء اختبار الاكتئاب
+  utter_launch_anxiety_test:
+  - text: اجراء اختبار القلق
+  utter_ask_death_wish:
+  - buttons:
+    - payload: /affirm
+      title: نعم
+    - payload: /deny
+      title: لا
+    button_type: vertical
+    text: هل تمنيت لو كنت ميتا أو تمنيت أن تنام ولا تستيقظ؟
+  utter_ask_thinking_how_to_do:
+  - buttons:
+    - payload: /affirm
+      title: نعم
+    - payload: /deny
+      title: لا
+    button_type: vertical
+    text: هل كنت تفكر في كيفية القيام بذلك؟
+  utter_ask_suicidal_thoughts_with_intention:
+  - buttons:
+    - payload: /affirm
+      title: نعم
+    - payload: /deny
+      title: لا
+    button_type: vertical
+    text: هل راودتك تلك الأفكار الانتحارية وكان لديك بعض النية لتنفيذها؟
+  utter_ask_planning_details_get_rid_of_life:
+  - buttons:
+    - payload: /affirm
+      title: نعم
+    - payload: /deny
+      title: لا
+    button_type: vertical
+    text: هل بدأت في التخطيط أو العمل على تفاصيل للتخلص من حياتك؟ هل تنوي تنفيذ هذه الخطة؟"
+  utter_ask_started_doing_anything_end_life:
+  - buttons:
+    - payload: /affirm
+      title: نعم
+    - payload: /deny
+      title: لا
+    button_type: vertical
+    text: هل فعلت أي شيء أو بدأت في فعل أي شيء لإنهاء حياتك أو تستعد لفعل ذلك؟
+  utter_ask_actual_kill_thought:
+  - buttons:
+    - payload: /affirm
+      title: نعم
+    - payload: /deny
+      title: لا
+    button_type: vertical
+    text: هل كان لديك بالفعل أي أفكار حول قتل نفسك ؟
+  utter_ask_little_interest:
+  - buttons:
+    - payload: /optionA
+      title: أبدا
+    - payload: /optionB
+      title: في بعض الأحيان
+    - payload: /optionC
+      title: في كثير من الأحيان
+    - payload: /optionD
+      title: دائمًا
+    button_type: vertical
+    text: هل فقدت الاهتمام أو الحماس للقيام بأنشطة تعتبرها ممتعة أو مهمة في الأسابيع الأربعة الماضية؟
+  utter_ask_feeling_down:
+  - buttons:
+    - payload: /optionA
+      title: أبدا
+    - payload: /optionB
+      title: في بعض الأحيان
+    - payload: /optionC
+      title: في كثير من الأحيان
+    - payload: /optionD
+      title: دائمًا
+    button_type: vertical
+    text: هل كنت تشعر بالحزن الشديد في الأسابيع الأربعة الماضية؟
+  utter_ask_trouble_sleeping:
+  - buttons:
+    - payload: /optionA
+      title: أبدا
+    - payload: /optionB
+      title: في بعض الأحيان
+    - payload: /optionC
+      title: في كثير من الأحيان
+    - payload: /optionD
+      title: دائمًا
+    button_type: vertical
+    text: هل كنت تعاني من صعوبة في النوم في الأسابيع الأربعة الماضية؟
+  utter_ask_feeling_tired:
+  - buttons:
+    - payload: /optionA
+      title: أبدا
+    - payload: /optionB
+      title: في بعض الأحيان
+    - payload: /optionC
+      title: في كثير من الأحيان
+    - payload: /optionD
+      title: دائمًا
+    button_type: vertical
+    text: هل كنت تشعر بالتعب أو فقدان الطاقة في الأسابيع الأربعة الماضية؟
+  utter_ask_poor_appetite:
+  - buttons:
+    - payload: /optionA
+      title: أبدا
+    - payload: /optionB
+      title: في بعض الأحيان
+    - payload: /optionC
+      title: في كثير من الأحيان
+    - payload: /optionD
+      title: دائمًا
+    button_type: vertical
+    text: هل كنت تشعر بفقدان الشهية أو زيادة الوزن في الأسابيع الأربعة الماضية؟
+  utter_ask_feeling_bad_about_self:
+  - buttons:
+    - payload: /optionA
+      title: أبدا
+    - payload: /optionB
+      title: في بعض الأحيان
+    - payload: /optionC
+      title: في كثير من الأحيان
+    - payload: /optionD
+      title: دائمًا
+    button_type: vertical
+    text: هل كنت تشعر بالاستسلام أو بأنك فاشل أو تكون قد خذلت نفسك أو الآخرين في الأسابيع الأربعة الماضية؟
+  utter_ask_trouble_concentrating:
+  - buttons:
+    - payload: /optionA
+      title: أبدا
+    - payload: /optionB
+      title: في بعض الأحيان
+    - payload: /optionC
+      title: في كثير من الأحيان
+    - payload: /optionD
+      title: دائمًا
+    button_type: vertical
+    text: هل كنت تعاني من صعوبة في التركيز على أشياء مثل قراءة الصحف أو مشاهدة التلفزيون في الأسابيع الأربعة الماضية؟
+  utter_ask_moving_slow_or_fast:
+  - buttons:
+    - payload: /optionA
+      title: أبدا
+    - payload: /optionB
+      title: في بعض الأحيان
+    - payload: /optionC
+      title: في كثير من الأحيان
+    - payload: /optionD
+      title: دائمًا
+    button_type: vertical
+    text: هل كنت تشعر بالتحرك ببطء أو بسرعة غير عادية في الأسابيع الأربعة الماضية؟
+  utter_ask_thoughts_of_self_harm:
+  - buttons:
+    - payload: /optionA
+      title: أبدا
+    - payload: /optionB
+      title: في بعض الأحيان
+    - payload: /optionC
+      title: في كثير من الأحيان
+    - payload: /optionD
+      title: دائمًا
+    button_type: vertical
+    text: هل كنت تفكر في إيذاء نفسك أو في الرغبة في الموت في الأسابيع الأربعة الماضية؟
+  utter_did_that_help:
+  - buttons:
+    - payload: /affirm
+      title: نعم
+    - payload: /deny
+      title: لا
+    button_type: vertical
+    text: هل ساعدك المقال ؟
+  utter_test_slots_values:
+  - text: إجاباتك هي {death_wish} {started_doing_anything_end_life}!
+  utter_result_of_test:
+  - text: يؤسفني سماع أنك تمر بهذه المشاعر الصعبة. من المهم التحدث إلى شخص يمكنه تقديم الدعم الذي تحتاجه. أوصي بشدة بالاتصال بأخصائي صحة نفسية لمتابعة حالتك . إذا كنت تفضل ذلك، يمكنني مساعدتك في حجز موعد مع أحد أطبائنا.
+  utter_ask_an_essay:
+  - buttons:
+    - payload: /read_article
+      title: نعم
+    - payload: /deny
+      title: لا
+    button_type: vertical
+    text: أتفهم تمامًا أن مناقشة هذه المشاعر يمكن أن تكون صعبة ومؤثرة . قد تجد أيضًا فائدة كبيرة في فهم الأعراض التي تعاني منها و استكشاف طرق التعامل معها . هل ترغب في عرض مقال مساعد ؟ ?
+  utter_show_article:
+  - text: (/)[يمكنك استعراض المقال [من هنا
+  utter_if_you_have_questions:
+  - text: إذا كان لديك أي أسئلة أو إذا كنت ترغب في مزيد من الدعم. تذكر، نحن هنا من أجلك
+  utter_read_article:
+  - text: خذ وقتك لقراءة المقال وحاول أن تطبق الجوانب العملية فيه ولا تنس أن المقال لا يغني عن زيارة الطبيب
+  utter_ask_conflict_with_activities:
+  - buttons:
+    - payload: /optionA
+      title: لا يوجد
+    - payload: /optionB
+      title: تعارض خفيف مع النشاطات االجتماعية أو العملية ولكن النشاط العام لا يتأثر.
+    - payload: /optionC
+      title: تعارض واضح في النشاطات االجتماعية أو العملية ولكن يمكن السيطرة عليه.
+    - payload: /optionD
+      title: تسبب خلال كبيرا في أداء النشاطات االجتماعية أو العملية.
+    - payload: /optionE
+      title: تسبب خلال بليغا.
+    button_type: vertical
+    text: ما مقدار التعارض الذي تحدثه األفكار الوسواسية مع نشاطاتك الاجتماعية والعملية.
+  utter_ask_time_spent_intrusive_thoughts:
+  - buttons:
+    - payload: /optionA
+      title: لا شيء
+    - payload: /optionB
+      title: أقل من ساعة في اليوم ، أو تتكرر أحيانا بمعدل 8 مرات فأقل يوميا
+    - payload: /optionC
+      title: من ساعة إلى 3 ساعات في اليوم، أو تتكرر كثيرا  أكثر من 8 مرات في اليوم لكن معظم ساعات اليوم خالية من الأفكار الوسواسية
+    - payload: /optionD
+      title: من 3 إلى 8 ساعات في اليوم ، أو تحدث كثيرا جدا تحدث أكثر من 8 مرات في اليوم وفي معظم ساعات اليوم
+    - payload: /optionE
+      title: أكثر من 8 ساعات في اليوم ، أو تحدث بشكل دائم  أكثر من تحملها ونادرا ما ماتمر ساعة بدون وساوس كثيرة
+    button_type: vertical
+    text: ما مقدار الوقت الذي تستغرقه الأفكار الوسواسية ؟
+  utter_ask_anxiety_level:
+  - buttons:
+    - payload: /optionA
+      title: لا يوجد
+    - payload: /optionB
+      title: خفيف (أحيانا) ؛ ليس مزعجا
+    - payload: /optionC
+      title: متوسط (غالبا) ومزعجا ولكن يمكن السيطرة عليه
+    - payload: /optionD
+      title: شديد (أغلب الوقت) ومزعج جدا
+    - payload: /optionE
+      title: توتر شديد (دائم) إلى حد الإعاقة تقريبا
+    button_type: vertical
+    text: ما مقدار التوتر والقلق المصاحب للأفكار الوسواسية ؟
+  utter_ask_effort_in_resisting_thoughts:
+  - buttons:
+    - payload: /optionA
+      title: لا أبذل جهدًا حتى أقاوم دائمًا (أو أن الأفكار قليلة جداً بحيث لا حاجة للمقاومة)
+    - payload: /optionB
+      title: أحاول أن أقاوم معظم الوقت.
+    - payload: /optionC
+      title: أبذل بعض الجهد حتى أقاوم.
+    - payload: /optionD
+      title: أستسلم لكل الأفكار الوسواسية دون محاولة للسيطرة عليها، وإن حاولت السيطرة فيكون بعد تردد.
+    - payload: /optionE
+      title: أستسلم كليًا وبإرادتي لأفكار الوسواسية كلها.
+    button_type: vertical
+    text: ما مقدار الجهد الذي يتم بذله في مقاومة الأفكار الوسواسية (بغض النظر عن نجاحك في المقاومة) ؟
+  utter_ask_control_over_intrusive_thoughts:
+  - buttons:
+    - payload: /optionA
+      title: سيطرة تامة.
+    - payload: /optionB
+      title: سيطرة كبيرة، عادةً يمكنني أن أوقف أو أصرف انتباهي عن الوسواس عند بذل بعض الجهد والتركيز.
+    - payload: /optionC
+      title: سيطرة متوسطة، بعض الأحيان أستطيع إيقاف أو صرف انتباهي عن الوسواس.
+    - payload: /optionD
+      title: سيطرة قليلة، نادراً ما أنجح في إيقاف الوسواس، أستطيع فقط صرف الانتباه وبصعوبة.
+    - payload: /optionE
+      title: لا سيطرة، نادراً ما أستطيع صرف الانتباه عن الوسواس ولو للحظات قليلة.
+    button_type: vertical
+    text: ما مقدار سيطرتك على الأفكار الوسواسية ؟
+  utter_ask_time_spent_compulsive_behaviors:
+  - buttons:
+    - payload: /optionA
+      title: لا شيء
+    - payload: /optionB
+      title: أقل من ساعة في اليوم، أو تقوم بالأفعال أحيانًا (التي لا تتجاوز 8 مرات في اليوم).
+    - payload: /optionC
+      title: من ساعة إلى ثلاث ساعات في اليوم، أو تقوم بالأفعال كثيرًا (أكثر من 8 مرات في اليوم ولكن معظم الساعات تخلو من الأفعال القهرية).
+    - payload: /optionD
+      title: أكثر من ثلاث ساعات في اليوم، أو تقوم بالأفعال كثيرًا جداً (أكثر من 8 مرات في اليوم وخلال معظم ساعات اليوم).
+    - payload: /optionE
+      title: أكثر من 8 ساعات في اليوم أو تقوم بالأفعال بشكل دائم (أكثر من أن تحصيها ونادرًا ما يمر ساعة بدون القيام بها).
+    button_type: vertical
+    text: ما مقدار الوقت الذي تمضيه في القيام بالأفعال القهرية ؟
+  utter_ask_conflict_with_activities_compulsive_behaviors:
+  - buttons:
+    - payload: /optionA
+      title: لا يوجد
+    - payload: /optionB
+      title: تعارض خفيف مع النشاطات الاجتماعية أو العملية، ولكن النشاط العام لا يتأثر
+    - payload: /optionC
+      title: تعارض واضح مع النشاطات الاجتماعية أو العملية ولكن يمكن السيطرة عليه.
+    - payload: /optionD
+      title: يسبب تعارضًا كبيرًا في أداء النشاطات الاجتماعية أو العملية.
+    - payload: /optionE
+      title: يسبب عجزًا كبيرًا.
+    button_type: vertical
+    text: ما  مقدار التعارض الذي تحدثه الأفعال القهرية في نشاطاتك الاجتماعية والعملية ؟
+  utter_ask_anxiety_level_compulsive_behaviors:
+  - buttons:
+    - payload: /optionA
+      title: لا يوجد
+    - payload: /optionB
+      title: قلق بسيط عند امتناعك عن القيام بالأفعال
+    - payload: /optionC
+      title: يظهر القلق لكن يمكن تحمله.
+    - payload: /optionD
+      title: قلق واضح ومزعج للغاية.
+    - payload: /optionE
+      title: قلق شديد يسبب عجزًا بليغًا
+    button_type: vertical
+    text: ما مقدار التوتر والقلق الناتج عن امتناعك عن القيام بالأفعال القهرية ؟
+  utter_ask_effort_in_resisting_behaviors:
+  - buttons:
+    - payload: /optionA
+      title: أبذل جهدًا حتى أقاوم دائمًا (أو أن الأفعال القهرية قليلة بحيث لا حاجة للمقاومة).
+    - payload: /optionB
+      title: أحاول أن أقاوم معظم الوقت.
+    - payload: /optionC
+      title: أعمل بعض المحاولات للمقاومة.
+    - payload: /optionD
+      title: استسلم لكل الأفعال القهرية دون محاولة للسيطرة عليها، وإن حاولت السيطرة فيكون بعد تردد.
+    - payload: /optionE
+      title: أستسلم كليًا وبإرادتي لكل الأفعال القهرية.
+    button_type: vertical
+    text: ما مقدار الجهد المبذول في مقاومة الأفعال القهرية (بغض النظر عن مدى نجاحك في المقاومة)؟
+  utter_ask_control_over_compulsive_behaviors:
+  - buttons:
+    - payload: /optionA
+      title: سيطرة تامة
+    - payload: /optionB
+      title: عادةً ما أوقف الأفعال القهرية بصعوبة
+    - payload: /optionC
+      title: أحيانًا أستطيع إيقاف الأفعال القهرية بصعوبة.
+    - payload: /optionD
+      title: أستطيع بصعوبة أن أؤخر - فقط - الأفعال القهرية لكن يجب علي القيام بها حتى النهاية.
+    - payload: /optionE
+      title: نادرًا ما أستطيع أن أؤخر القيام بالأفعال القهرية ولو للحظات.
+    button_type: vertical
+    text: ما مقدار سيطرتك على الأفعال القهرية ؟
+  utter_ask_city_name:
+  - buttons:
+    - payload: /optionA
+      title: مدينة نصر
+    - payload: /optionB
+      title: أكتوبر
+    - payload: /optionC
+      title: بولاق
+    - payload: /optionD
+      title: الفردوس
+    - payload: /optionE
+      title: أخرى
+    button_type: vertical
+    text: اختر المكان
+  utter_ask_session_type:
+  - buttons:
+    - payload: /optionA
+      title: في العيادة
+    - payload: /optionB
+      title: أونلاين
+    button_type: vertical
+    text: هل تفضل أن تكو الجلسة في العيادة أم أونلاين ؟
+  utter_ask_maxPriceOnline:
+  - buttons:
+    - payload: /optionA
+      title: '300'
+    - payload: /optionB
+      title: '400'
+    - payload: /optionC
+      title: '500'
+    - payload: /optionD
+      title: '1000'
+    - payload: /optionE
+      title: أخرى
+    button_type: vertical
+    text: اختر الحد الأقصى لسعر الجلسة الذي تريده ؟
+  utter_ask_minPriceOnline:
+  - buttons:
+    - payload: /optionA
+      title: '200'
+    - payload: /optionB
+      title: '300'
+    - payload: /optionC
+      title: '400'
+    - payload: /optionD
+      title: '500'
+    - payload: /optionE
+      title: أخرى
+    button_type: vertical
+    text: اختر الحد الأدنى لسعر الجلسة الذي تريده ؟
+  utter_no_problem:
+  - text: ' لا مشكلة على الإطلاق'
+  utter_ask_how_can_i_help_you:
+  - buttons:
+    - payload: /diagnosing
+      title: تقييم
+    - payload: /Conducting_a_test
+      title: إجراء اختبار نفسي
+    - payload: /ask_docotor_prefer
+      title: حجز جلسة علاجية
+    - payload: /Suggesting_supporting_materials
+      title: اقتراح مواد مساعدة (فيديو - مقال - نصائح)
+    - payload: /Ending_the_conversation
+      title: إنهاء المحادثة
+    - payload: /other
+      title: أخرى
+    button_type: vertical
+    text: كيف يمكنني مساعدتك ?
+  utter_gad_test:
+  - text: في خلال الأسبوعين الماضيين كم مرة عانيت من المشاكل الآتية؟
+  utter_ask_feeling_nervous:
+  - buttons:
+    - payload: /optionB
+      title: على الإطلاق
+    - payload: /optionB
+      title: عدة أيام
+    - payload: /optionB
+      title: أكثر من نصف الأيام
+    - payload: /optionB
+      title: تقريبًا كل يوم
+    button_type: vertical
+    text: الشعور بالتوتر، القلق، أو عدم الراحة؟
+  utter_ask_unable_to_control_worrying:
+  - buttons:
+    - payload: /optionB
+      title: على الإطلاق
+    - payload: /optionB
+      title: عدة أيام
+    - payload: /optionB
+      title: أكثر من نصف الأيام
+    - payload: /optionB
+      title: تقريبًا كل يوم
+    button_type: vertical
+    text: عدم القدرة على التوقف أو التحكم في القلق؟
+  utter_ask_worrying_too_much:
+  - buttons:
+    - payload: /optionB
+      title: على الإطلاق
+    - payload: /optionB
+      title: عدة أيام
+    - payload: /optionB
+      title: أكثر من نصف الأيام
+    - payload: /optionB
+      title: تقريبًا كل يوم
+    button_type: vertical
+    text: التفكير الزائد في أمور مختلفة؟
+  utter_ask_trouble_relaxing:
+  - buttons:
+    - payload: /optionB
+      title: على الإطلاق
+    - payload: /optionB
+      title: عدة أيام
+    - payload: /optionB
+      title: أكثر من نصف الأيام
+    - payload: /optionB
+      title: تقريبًا كل يوم
+    button_type: vertical
+    text: الصعوبة في الاسترخاء؟
+  utter_ask_restlessness:
+  - buttons:
+    - payload: /optionB
+      title: على الإطلاق
+    - payload: /optionB
+      title: عدة أيام
+    - payload: /optionB
+      title: أكثر من نصف الأيام
+    - payload: /optionB
+      title: تقريبًا كل يوم
+    button_type: vertical
+    text: الاضطراب الزائد الذي يجعل من الصعب الجلوس بدون حركة؟
+  utter_ask_easily_irritable:
+  - buttons:
+    - payload: /optionB
+      title: على الإطلاق
+    - payload: /optionB
+      title: عدة أيام
+    - payload: /optionB
+      title: أكثر من نصف الأيام
+    - payload: /optionB
+      title: تقريبًا كل يوم
+    button_type: vertical
+    text: سهولة الغضب أو التحفظ؟
+  utter_ask_feeling_afraid:
+  - buttons:
+    - payload: /optionB
+      title: على الإطلاق
+    - payload: /optionB
+      title: عدة أيام
+    - payload: /optionB
+      title: أكثر من نصف الأيام
+    - payload: /optionB
+      title: تقريبًا كل يوم
+    button_type: vertical
+    text: الشعور بالخوف كما لو كان هناك شيء فظيع قد يحدث؟
+  utter_moving_to_doctor_form:
+  - text: بالتأكيد.  تفضل باخيار ما يناسبك من الاختيارات التالية سيساعدني ذلك في توجيهك نحو الجلسة العلاجية الأنسب لك
+  utter_end_conversation:
+  - text: أفهم تمامًا. صحتك هي الأولوية، وأحترم قرارك. إذا شعرت في أي وقت برغبة في استئناف الدردشة أو إذا كنت بحاجة إلى مساعدة في المستقبل، فلا تتردد في التواصل. اعتني بنفسك وأتمنى لك كل التوفيق
+  utter_other:
+  - text: تفضل بكتابة ما تريد وسأحاول مساعدتك
+forms:
+  feeling_form:
+    required_slots:
+    - feeling_1
+    - feeling_2
+  doctor_prefer_form:
+    required_slots:
+    - city_name
+    - session_type
+    - maxPriceOnline
+    - minPriceOnline
+  phq9_form:
+    required_slots:
+    - little_interest
+    - feeling_down
+    - trouble_sleeping
+    - feeling_tired
+    - poor_appetite
+    - feeling_bad_about_self
+    - trouble_concentrating
+    - moving_slow_or_fast
+    - thoughts_of_self_harm
+  gad_form:
+    required_slots:
+    - feeling_nervous
+    - unable_to_control_worrying
+    - worrying_too_much
+    - trouble_relaxing
+    - restlessness
+    - easily_irritable
+    - feeling_afraid
+  suicide_form:
+    required_slots:
+    - death_wish
+    - actual_kill_thought
+    - thinking_how_to_do
+    - suicidal_thoughts_with_intention
+    - planning_details_get_rid_of_life
+    - started_doing_anything_end_life
+  ocd_form:
+    required_slots:
+    - time_spent_intrusive_thoughts
+    - conflict_with_activities
+    - anxiety_level
+    - effort_in_resisting_thoughts
+    - control_over_intrusive_thoughts
+    - time_spent_compulsive_behaviors
+    - conflict_with_activities_compulsive_behaviors
+    - anxiety_level_compulsive_behaviors
+    - effort_in_resisting_behaviors
+    - control_over_compulsive_behaviors
+entities:
+- name
+slots:
+  little_interest:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: phq9_form
+        requested_slot: little_interest
+  feeling_down:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: phq9_form
+        requested_slot: feeling_down
+  trouble_sleeping:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: phq9_form
+        requested_slot: trouble_sleeping
+  feeling_tired:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: phq9_form
+        requested_slot: feeling_tired
+  poor_appetite:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: phq9_form
+        requested_slot: poor_appetite
+  feeling_bad_about_self:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: phq9_form
+        requested_slot: feeling_bad_about_self
+  trouble_concentrating:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: phq9_form
+        requested_slot: trouble_concentrating
+  moving_slow_or_fast:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: phq9_form
+        requested_slot: moving_slow_or_fast
+  thoughts_of_self_harm:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: phq9_form
+        requested_slot: thoughts_of_self_harm
+  feeling_nervous:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: gad_form
+        requested_slot: feeling_nervous
+  unable_to_control_worrying:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: gad_form
+        requested_slot: unable_to_control_worrying
+  worrying_too_much:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: gad_form
+        requested_slot: worrying_too_much
+  trouble_relaxing:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: gad_form
+        requested_slot: trouble_relaxing
+  restlessness:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: gad_form
+        requested_slot: restlessness
+  easily_irritable:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: gad_form
+        requested_slot: easily_irritable
+  feeling_afraid:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: gad_form
+        requested_slot: feeling_afraid
+  time_spent_intrusive_thoughts:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: ocd_form
+        requested_slot: time_spent_intrusive_thoughts
+  conflict_with_activities:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: ocd_form
+        requested_slot: conflict_with_activities
+  anxiety_level:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: ocd_form
+        requested_slot: anxiety_level
+  effort_in_resisting_thoughts:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: ocd_form
+        requested_slot: effort_in_resisting_thoughts
+  control_over_intrusive_thoughts:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: ocd_form
+        requested_slot: control_over_intrusive_thoughts
+  time_spent_compulsive_behaviors:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: ocd_form
+        requested_slot: time_spent_compulsive_behaviors
+  conflict_with_activities_compulsive_behaviors:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: ocd_form
+        requested_slot: conflict_with_activities_compulsive_behaviors
+  anxiety_level_compulsive_behaviors:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: ocd_form
+        requested_slot: anxiety_level_compulsive_behaviors
+  effort_in_resisting_behaviors:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: ocd_form
+        requested_slot: effort_in_resisting_behaviors
+  control_over_compulsive_behaviors:
+    type: float
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: ocd_form
+        requested_slot: control_over_compulsive_behaviors
+  first_name:
+    type: text
+    influence_conversation: true
+    initial_value: صديقي
+    mappings:
+    - type: from_entity
+      entity: name
+  feeling_1:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: feeling_form
+        requested_slot: feeling_1
+  feeling_2:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: feeling_form
+        requested_slot: feeling_2
+  death_wish:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      value: true
+      intent: affirm
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: death_wish
+    - type: from_intent
+      value: false
+      intent: deny
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: death_wish
+  actual_kill_thought:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      value: true
+      intent: affirm
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: actual_kill_thought
+    - type: from_intent
+      value: false
+      intent: deny
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: actual_kill_thought
+  thinking_how_to_do:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      value: true
+      intent: affirm
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: thinking_how_to_do
+    - type: from_intent
+      value: false
+      intent: deny
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: thinking_how_to_do
+  suicidal_thoughts_with_intention:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      value: true
+      intent: affirm
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: suicidal_thoughts_with_intention
+    - type: from_intent
+      value: false
+      intent: deny
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: suicidal_thoughts_with_intention
+  planning_details_get_rid_of_life:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      value: true
+      intent: affirm
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: planning_details_get_rid_of_life
+    - type: from_intent
+      value: false
+      intent: deny
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: planning_details_get_rid_of_life
+  started_doing_anything_end_life:
+    type: bool
+    influence_conversation: true
+    mappings:
+    - type: from_intent
+      value: true
+      intent: affirm
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: started_doing_anything_end_life
+    - type: from_intent
+      value: false
+      intent: deny
+      conditions:
+      - active_loop: suicide_form
+        requested_slot: started_doing_anything_end_life
+  sentiment_1:
+    type: categorical
+    influence_conversation: true
+    mappings:
+    - type: custom
+    values:
+    - depression
+    - anxiety
+    - suicide
+    - ocd
+    - other
+    - normal
+  sentiment_2:
+    type: categorical
+    influence_conversation: true
+    mappings:
+    - type: custom
+    values:
+    - depression
+    - anxiety
+    - suicide
+    - ocd
+    - other
+    - normal
+  depression:
+    type: bool
+    initial_value: true
+    influence_conversation: true
+    mappings:
+    - type: custom
+  city_name:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: doctor_prefer_form
+        requested_slot: city_name
+  session_type:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: doctor_prefer_form
+        requested_slot: session_type
+  maxPriceOnline:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: doctor_prefer_form
+        requested_slot: maxPriceOnline
+  minPriceOnline:
+    type: text
+    mappings:
+    - type: from_text
+      conditions:
+      - active_loop: doctor_prefer_form
+        requested_slot: minPriceOnline
+actions:
+- utter_refer_to_doctor
+- action_phq9_form_result
+- utter_launch_test
+- utter_greet
+- utter_diagnosing
+- utter_thanking
+- validate_feeling_form
+- action_call_classifier_api
+- action_call_classifier_api_2
+- action_get_random_article
+- action_gad_form_result
+- action_ocd_form_result
+- action_suicide_test_result
+- action_show_tips
+- action_show_video
+- action_show_article
+- action_show_doctor
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
-
-# all current possible intent from user 
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - weather_in_city
-  - weather_without_city
-
-  # slot value extract from entities 
-  
-entites:
-- city
-  
-slots:
-  city:
-    type: text
-    influence_conversation: true 
-
-
-responses:
-  utter_greet:
-  - text: Hi! I'm Misty , delivering weather forecasts , what can i do for you
-  - text: Hi there, I'm Misty , you can ask me about weather for today
-  utter_ask_city:
-  - text: Which country weather you want to know  ?
-  - text: I know weather in Singapore, Malaysia and in Thailand, which one would you like to know ?
-  - text: Which country? 
-  utter_im_misty :
-  - text: I am Misty. I'm running on Rasa Open Source 2.0 conversational AI platform, I source my forecasts from OpenWeather, and I'm good at it!
-  utter_capabilities:
-  - text: I can tell the current weather and forecast for today. I have weather data for Singapore, Malaysia and Thailand
-  utter_im_well:
-  - text: I'm good , thanks
-  - text: I'm well thanks. I can forecast the weather for you
-  utter_goodbye:
-  - text: Bye for now, your forecast was generated by OpenWeather.
-  - text: The forecast was made avaialble by OpenWeather. See you again soon.
-
-  # Custom Actions
-actions:
-- action_weather
-- utter_ask_city
-- utter_goodbye
-- utter_greet
-  
-  #active forms if user does not provide city, it is asked separately. Slot value set based on asnwer
-forms:
-  city_form:
-    city:
-    - type: from_entity
-      entity: city   
