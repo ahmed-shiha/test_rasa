@@ -1,25 +1,4726 @@
-version: "2.0"
+# version: "3.1"
 
-stories:
+# stories:
 
-- story: ask weather in city
-  steps:
-  - intent: weather_in_city
-  - action: action_weather
- 
-- story: ask weather without city 
-  steps:
-  - intent: weather_without_city
-  - action: city_form
-  - action: action_weather 
+# - story: happy path
+#   steps:
+#   - intent: mood_great
+#   - action: utter_great
+#   - action: utter_general_advice
+#   - intent: express_gratitude
+#   - action: utter_express_gratitude
 
-- story: ask misty what can he do
-  steps:
-  - intent: capabilities
-  - action: utter_capabilities
 
-- story: ask misty to introduce himself
-  steps:
-  - intent: who_are_you
-  - action: utter_im_misty
- 
+# # - story: ask_gad_test_deny_doctor_accept_article
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+# #   # #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+# # - story: ask_gad_test_accept_doctor_accept_article
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   ##- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_view_doctor_results
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+# # - story: ask_gad_test_accept_doctor_accept_article
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_view_doctor_results
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_suicide
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_ocd
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: ocd
+# #   - action: utter_launch_test
+# #   - action: ocd_form
+# #   - active_loop: ocd_form
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: control_over_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: control_over_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_ocd_form_result
+
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+# #   # - action: action_get_random_article
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_depression
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: depression
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_anxiety
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: anxiety
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_docotor_prefer
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ending_conversation
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: Ending_the_conversation
+# #   - action: utter_end_conversation
+
+# # - story: ask_gad_test_deny_doctor_deny_article_other
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: other
+# #   - action: utter_other
+
+
+
+# # ##############_____PHQ9______###############
+# # - story: ask_gad_test_deny_doctor_accept_article
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+# # - story: ask_gad_test_accept_doctor_accept_article
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_view_doctor_results
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+# # - story: ask_gad_test_accept_doctor_accept_article
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_view_doctor_results
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_suicide
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_ocd
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: ocd
+# #   - action: utter_launch_test
+# #   - action: ocd_form
+# #   - active_loop: ocd_form
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: control_over_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: control_over_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_ocd_form_result
+
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+# #   # - action: action_get_random_article
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_depression
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: depression
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_anxiety
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: anxiety
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_docotor_prefer
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ending_conversation
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: Ending_the_conversation
+# #   - action: utter_end_conversation
+
+# # - story: ask_gad_test_deny_doctor_deny_article_other
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: other
+# #   - action: utter_other
+
+# # ########_______feeling_from_start__suicide___####
+
+# # - story: ask_feeling_test-suicide
+# #   steps:
+# #   - intent: greet
+# #   - action: utter_greet
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1 : suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+# # - story: ask_for_doctor_form
+# #   steps:
+# #   - intent: ask_docotor_prefer
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+
+# # - story: ask_feeling_test-suicide_deny_doctor
+# #   steps:
+# #   - intent: greet
+# #   - action: utter_greet
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1 : suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_diagnosing
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1: suicide
+# #     - action: utter_launch_test
+# #     - action: suicide_form
+# #     - active_loop: suicide_form
+# #     - slot_was_set:
+# #       - requested_slot: death_wish
+# #     - slot_was_set:
+# #       - requested_slot: actual_kill_thought
+# #     - slot_was_set:
+# #       - requested_slot: thinking_how_to_do
+# #     - slot_was_set:
+# #       - requested_slot: suicidal_thoughts_with_intention
+# #     - slot_was_set:
+# #       - requested_slot: planning_details_get_rid_of_life
+# #     - slot_was_set:
+# #       - requested_slot: started_doing_anything_end_life
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_suicide_test_result
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: diagnosing
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_Conducting_a_self_assessment
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1: suicide
+# #     - action: utter_launch_test
+# #     - action: suicide_form
+# #     - active_loop: suicide_form
+# #     - slot_was_set:
+# #       - requested_slot: death_wish
+# #     - slot_was_set:
+# #       - requested_slot: actual_kill_thought
+# #     - slot_was_set:
+# #       - requested_slot: thinking_how_to_do
+# #     - slot_was_set:
+# #       - requested_slot: suicidal_thoughts_with_intention
+# #     - slot_was_set:
+# #       - requested_slot: planning_details_get_rid_of_life
+# #     - slot_was_set:
+# #       - requested_slot: started_doing_anything_end_life
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_suicide_test_result
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: Conducting_a_self_assessment
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_supporting_materials
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1: suicide
+# #     - action: utter_launch_test
+# #     - action: suicide_form
+# #     - active_loop: suicide_form
+# #     - slot_was_set:
+# #       - requested_slot: death_wish
+# #     - slot_was_set:
+# #       - requested_slot: actual_kill_thought
+# #     - slot_was_set:
+# #       - requested_slot: thinking_how_to_do
+# #     - slot_was_set:
+# #       - requested_slot: suicidal_thoughts_with_intention
+# #     - slot_was_set:
+# #       - requested_slot: planning_details_get_rid_of_life
+# #     - slot_was_set:
+# #       - requested_slot: started_doing_anything_end_life
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_suicide_test_result
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: Suggesting_supporting_materials
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_Ending_the_conversation
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1: suicide
+# #     - action: utter_launch_test
+# #     - action: suicide_form
+# #     - active_loop: suicide_form
+# #     - slot_was_set:
+# #       - requested_slot: death_wish
+# #     - slot_was_set:
+# #       - requested_slot: actual_kill_thought
+# #     - slot_was_set:
+# #       - requested_slot: thinking_how_to_do
+# #     - slot_was_set:
+# #       - requested_slot: suicidal_thoughts_with_intention
+# #     - slot_was_set:
+# #       - requested_slot: planning_details_get_rid_of_life
+# #     - slot_was_set:
+# #       - requested_slot: started_doing_anything_end_life
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_suicide_test_result
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: Ending_the_conversation
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_supporting_materials_other
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1: suicide
+# #     - action: utter_launch_test
+# #     - action: suicide_form
+# #     - active_loop: suicide_form
+# #     - slot_was_set:
+# #       - requested_slot: death_wish
+# #     - slot_was_set:
+# #       - requested_slot: actual_kill_thought
+# #     - slot_was_set:
+# #       - requested_slot: thinking_how_to_do
+# #     - slot_was_set:
+# #       - requested_slot: suicidal_thoughts_with_intention
+# #     - slot_was_set:
+# #       - requested_slot: planning_details_get_rid_of_life
+# #     - slot_was_set:
+# #       - requested_slot: started_doing_anything_end_life
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_suicide_test_result
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: other
+# #     - action: utter_other
+
+# # ########_______feeling_from_start__anxiety___####
+# # - story: ask_feeling_test-depression
+# #   steps:
+# #   - intent: greet
+# #   - action: utter_greet
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1 : anxiety
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+# # - story: ask_for_doctor_form
+# #   steps:
+# #   - intent: ask_docotor_prefer
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+
+# # - story: ask_feeling_test-depression_deny_doctor
+# #   steps:
+# #   - intent: greet
+# #   - action: utter_greet
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1 : anxiety
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_diagnosing
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1 : anxiety
+# #     - action: utter_launch_test
+# #     - action: utter_gad_test
+# #     - action: gad_form
+# #     - active_loop: gad_form
+# #     - slot_was_set:
+# #         - requested_slot: feeling_nervous
+# #     - slot_was_set:
+# #         - requested_slot: unable_to_control_worrying
+# #     - slot_was_set:
+# #         - requested_slot: worrying_too_much
+# #     - slot_was_set:
+# #         - requested_slot: trouble_relaxing
+# #     - slot_was_set:
+# #         - requested_slot: restlessness
+# #     - slot_was_set:
+# #         - requested_slot: easily_irritable
+# #     - slot_was_set:
+# #         - requested_slot: feeling_afraid
+# #     - slot_was_set:
+# #         - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_gad_form_result
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: diagnosing
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_Conducting_a_self_assessment
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1 : anxiety
+# #     - action: utter_launch_test
+# #     - action: utter_gad_test
+# #     - action: gad_form
+# #     - active_loop: gad_form
+# #     - slot_was_set:
+# #         - requested_slot: feeling_nervous
+# #     - slot_was_set:
+# #         - requested_slot: unable_to_control_worrying
+# #     - slot_was_set:
+# #         - requested_slot: worrying_too_much
+# #     - slot_was_set:
+# #         - requested_slot: trouble_relaxing
+# #     - slot_was_set:
+# #         - requested_slot: restlessness
+# #     - slot_was_set:
+# #         - requested_slot: easily_irritable
+# #     - slot_was_set:
+# #         - requested_slot: feeling_afraid
+# #     - slot_was_set:
+# #         - requested_slot: null
+# #     - active_loop: null
+# #     #- action: utter_result_of_test
+# #     - action: action_gad_form_result
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: Conducting_a_self_assessment
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_supporting_materials
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1 : anxiety
+# #     - action: utter_launch_test
+# #     - action: utter_gad_test
+# #     - action: gad_form
+# #     - active_loop: gad_form
+# #     - slot_was_set:
+# #         - requested_slot: feeling_nervous
+# #     - slot_was_set:
+# #         - requested_slot: unable_to_control_worrying
+# #     - slot_was_set:
+# #         - requested_slot: worrying_too_much
+# #     - slot_was_set:
+# #         - requested_slot: trouble_relaxing
+# #     - slot_was_set:
+# #         - requested_slot: restlessness
+# #     - slot_was_set:
+# #         - requested_slot: easily_irritable
+# #     - slot_was_set:
+# #         - requested_slot: feeling_afraid
+# #     - slot_was_set:
+# #         - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_gad_form_result
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: Suggesting_supporting_materials
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_Ending_the_conversation
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1 : anxiety
+# #     - action: utter_launch_test
+# #     - action: utter_gad_test
+# #     - action: gad_form
+# #     - active_loop: gad_form
+# #     - slot_was_set:
+# #         - requested_slot: feeling_nervous
+# #     - slot_was_set:
+# #         - requested_slot: unable_to_control_worrying
+# #     - slot_was_set:
+# #         - requested_slot: worrying_too_much
+# #     - slot_was_set:
+# #         - requested_slot: trouble_relaxing
+# #     - slot_was_set:
+# #         - requested_slot: restlessness
+# #     - slot_was_set:
+# #         - requested_slot: easily_irritable
+# #     - slot_was_set:
+# #         - requested_slot: feeling_afraid
+# #     - slot_was_set:
+# #         - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_gad_form_result
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: Ending_the_conversation
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_supporting_materials_other
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1 : anxiety
+# #     - action: utter_launch_test
+# #     - action: utter_gad_test
+# #     - action: gad_form
+# #     - active_loop: gad_form
+# #     - slot_was_set:
+# #         - requested_slot: feeling_nervous
+# #     - slot_was_set:
+# #         - requested_slot: unable_to_control_worrying
+# #     - slot_was_set:
+# #         - requested_slot: worrying_too_much
+# #     - slot_was_set:
+# #         - requested_slot: trouble_relaxing
+# #     - slot_was_set:
+# #         - requested_slot: restlessness
+# #     - slot_was_set:
+# #         - requested_slot: easily_irritable
+# #     - slot_was_set:
+# #         - requested_slot: feeling_afraid
+# #     - slot_was_set:
+# #         - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_gad_form_result
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: other
+# #     - action: utter_other
+
+# ########_______feeling_from_start__depression___####
+# - story: ask_feeling_test-depression
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: feeling_form
+#   - active_loop: feeling_form
+#   - slot_was_set:
+#     - requested_slot: feeling_1
+#   - slot_was_set:
+#     - requested_slot: feeling_2
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_thanking
+#   - action: utter_diagnosing
+#   # - action: action_call_classifier_api_2
+#   # - slot_was_set:
+#   #   - sentiment_1 : depression
+#   - action: utter_launch_test
+#   - action: phq9_form
+#   - active_loop: phq9_form
+#   - slot_was_set:
+#       - requested_slot: little_interest
+#   - slot_was_set:
+#       - requested_slot: feeling_down
+#   - slot_was_set:
+#       - requested_slot: trouble_sleeping
+#   - slot_was_set:
+#       - requested_slot: feeling_tired
+#   - slot_was_set:
+#       - requested_slot: poor_appetite
+#   - slot_was_set:
+#       - requested_slot: feeling_bad_about_self
+#   - slot_was_set:
+#       - requested_slot: trouble_concentrating
+#   - slot_was_set:
+#       - requested_slot: moving_slow_or_fast
+#   - slot_was_set:
+#       - requested_slot: thoughts_of_self_harm
+#   - slot_was_set:
+#       - requested_slot: null
+#   - active_loop: null
+#   - action: action_phq9_form_result
+#   #- action: utter_result_of_test
+#   - action: utter_refer_to_doctor
+#   - intent: ask_docotor_prefer
+#   - action: doctor_prefer_form
+#   - active_loop: doctor_prefer_form
+#   - slot_was_set:
+#     - requested_slot: city_name
+#   - slot_was_set:
+#     - requested_slot: session_type
+#   - slot_was_set:
+#     - requested_slot: minPriceOnline
+#   - slot_was_set:
+#     - requested_slot: maxPriceOnline
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_doctor_results
+#   - action: utter_ask_an_essay
+#   - intent: read_article
+#   - action: action_show_article
+#   - action: utter_read_article
+
+# - story: ask_for_doctor_form
+#   steps:
+#   - intent: ask_docotor_prefer
+#   - action: doctor_prefer_form
+#   - active_loop: doctor_prefer_form
+#   - slot_was_set:
+#     - requested_slot: city_name
+#   - slot_was_set:
+#     - requested_slot: session_type
+#   - slot_was_set:
+#     - requested_slot: minPriceOnline
+#   - slot_was_set:
+#     - requested_slot: maxPriceOnline
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_doctor_results
+#   - action: utter_ask_an_essay
+#   - intent: read_article
+#   - action: action_show_article
+#   - action: utter_read_article
+
+
+# - story: ask_feeling_test-depression_deny_doctor
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: feeling_form
+#   - active_loop: feeling_form
+#   - slot_was_set:
+#     - requested_slot: feeling_1
+#   - slot_was_set:
+#     - requested_slot: feeling_2
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_thanking
+#   - action: utter_diagnosing
+#   # - action: action_call_classifier_api_2
+#   # - slot_was_set:
+#   #   - sentiment_1 : depression
+#   - action: utter_launch_test
+#   - action: phq9_form
+#   - active_loop: phq9_form
+#   - slot_was_set:
+#       - requested_slot: little_interest
+#   - slot_was_set:
+#       - requested_slot: feeling_down
+#   - slot_was_set:
+#       - requested_slot: trouble_sleeping
+#   - slot_was_set:
+#       - requested_slot: feeling_tired
+#   - slot_was_set:
+#       - requested_slot: poor_appetite
+#   - slot_was_set:
+#       - requested_slot: feeling_bad_about_self
+#   - slot_was_set:
+#       - requested_slot: trouble_concentrating
+#   - slot_was_set:
+#       - requested_slot: moving_slow_or_fast
+#   - slot_was_set:
+#       - requested_slot: thoughts_of_self_harm
+#   - slot_was_set:
+#       - requested_slot: null
+#   - active_loop: null
+#   - action: action_phq9_form_result
+#   #- action: utter_result_of_test
+#   - action: utter_refer_to_doctor
+#   - intent: deny_doctor
+#   - action: utter_ask_an_essay
+#   - intent: read_article
+#   - action: action_show_article
+#   - action: utter_read_article
+
+
+
+# - story: ask_feeling_test-suicide_how_can_i_help_diagnosing
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - action: feeling_form
+#     - active_loop: feeling_form
+#     - slot_was_set:
+#       - requested_slot: feeling_1
+#     - slot_was_set:
+#       - requested_slot: feeling_2
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_thanking
+#     - action: utter_diagnosing
+#     # - action: action_call_classifier_api_2
+#     # - slot_was_set:
+#     #   - sentiment_1: depression
+#     - action: utter_launch_test
+#     - action: phq9_form
+#     - active_loop: phq9_form
+#     - slot_was_set:
+#         - requested_slot: little_interest
+#     - slot_was_set:
+#         - requested_slot: feeling_down
+#     - slot_was_set:
+#         - requested_slot: trouble_sleeping
+#     - slot_was_set:
+#         - requested_slot: feeling_tired
+#     - slot_was_set:
+#         - requested_slot: poor_appetite
+#     - slot_was_set:
+#         - requested_slot: feeling_bad_about_self
+#     - slot_was_set:
+#         - requested_slot: trouble_concentrating
+#     - slot_was_set:
+#         - requested_slot: moving_slow_or_fast
+#     - slot_was_set:
+#         - requested_slot: thoughts_of_self_harm
+#     - slot_was_set:
+#         - requested_slot: null
+#     - active_loop: null
+#     - action: action_phq9_form_result
+#     #- action: utter_result_of_test
+#     - action: utter_refer_to_doctor
+#     - intent: ask_docotor_prefer
+#     - action: doctor_prefer_form
+#     - active_loop: doctor_prefer_form
+#     - slot_was_set:
+#       - requested_slot: city_name
+#     - slot_was_set:
+#       - requested_slot: session_type
+#     - slot_was_set:
+#       - requested_slot: minPriceOnline
+#     - slot_was_set:
+#       - requested_slot: maxPriceOnline
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_doctor_results
+#     - action: utter_ask_an_essay
+#     - intent: deny_article
+#     - action: utter_ask_how_can_i_help_you
+#     - intent: diagnosing
+#     - action: feeling_form
+#     - active_loop: feeling_form
+#     - slot_was_set:
+#       - requested_slot: feeling_1
+#     - slot_was_set:
+#       - requested_slot: feeling_2
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_thanking
+#     - action: utter_diagnosing
+#     # - action: action_call_classifier_api_2
+
+# - story: ask_feeling_test-suicide_how_can_i_help_Conducting_a_self_assessment
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - action: feeling_form
+#     - active_loop: feeling_form
+#     - slot_was_set:
+#       - requested_slot: feeling_1
+#     - slot_was_set:
+#       - requested_slot: feeling_2
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_thanking
+#     - action: utter_diagnosing
+#     # - action: action_call_classifier_api_2
+#     # - slot_was_set:
+#     #   - sentiment_1: depression
+#     - action: utter_launch_test
+#     - action: phq9_form
+#     - active_loop: phq9_form
+#     - slot_was_set:
+#         - requested_slot: little_interest
+#     - slot_was_set:
+#         - requested_slot: feeling_down
+#     - slot_was_set:
+#         - requested_slot: trouble_sleeping
+#     - slot_was_set:
+#         - requested_slot: feeling_tired
+#     - slot_was_set:
+#         - requested_slot: poor_appetite
+#     - slot_was_set:
+#         - requested_slot: feeling_bad_about_self
+#     - slot_was_set:
+#         - requested_slot: trouble_concentrating
+#     - slot_was_set:
+#         - requested_slot: moving_slow_or_fast
+#     - slot_was_set:
+#         - requested_slot: thoughts_of_self_harm
+#     - slot_was_set:
+#         - requested_slot: null
+#     - active_loop: null
+#     - action: action_phq9_form_result
+#     #- action: utter_result_of_test
+#     - action: utter_refer_to_doctor
+#     - intent: ask_docotor_prefer
+#     - action: doctor_prefer_form
+#     - active_loop: doctor_prefer_form
+#     - slot_was_set:
+#       - requested_slot: city_name
+#     - slot_was_set:
+#       - requested_slot: session_type
+#     - slot_was_set:
+#       - requested_slot: minPriceOnline
+#     - slot_was_set:
+#       - requested_slot: maxPriceOnline
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_doctor_results
+#     - action: utter_ask_an_essay
+#     - intent: deny_article
+#     - action: utter_ask_how_can_i_help_you
+#     - intent: Conducting_a_self_assessment
+
+# - story: ask_feeling_test-suicide_how_can_i_help_supporting_materials
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - action: feeling_form
+#     - active_loop: feeling_form
+#     - slot_was_set:
+#       - requested_slot: feeling_1
+#     - slot_was_set:
+#       - requested_slot: feeling_2
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_thanking
+#     - action: utter_diagnosing
+#     # - action: action_call_classifier_api_2
+#     # - slot_was_set:
+#     #   - sentiment_1: depression
+#     - action: utter_launch_test
+#     - action: phq9_form
+#     - active_loop: phq9_form
+#     - slot_was_set:
+#         - requested_slot: little_interest
+#     - slot_was_set:
+#         - requested_slot: feeling_down
+#     - slot_was_set:
+#         - requested_slot: trouble_sleeping
+#     - slot_was_set:
+#         - requested_slot: feeling_tired
+#     - slot_was_set:
+#         - requested_slot: poor_appetite
+#     - slot_was_set:
+#         - requested_slot: feeling_bad_about_self
+#     - slot_was_set:
+#         - requested_slot: trouble_concentrating
+#     - slot_was_set:
+#         - requested_slot: moving_slow_or_fast
+#     - slot_was_set:
+#         - requested_slot: thoughts_of_self_harm
+#     - slot_was_set:
+#         - requested_slot: null
+#     - active_loop: null
+#     - action: action_phq9_form_result
+#     #- action: utter_result_of_test
+#     - action: utter_refer_to_doctor
+#     - intent: ask_docotor_prefer
+#     - action: doctor_prefer_form
+#     - active_loop: doctor_prefer_form
+#     - slot_was_set:
+#       - requested_slot: city_name
+#     - slot_was_set:
+#       - requested_slot: session_type
+#     - slot_was_set:
+#       - requested_slot: minPriceOnline
+#     - slot_was_set:
+#       - requested_slot: maxPriceOnline
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_doctor_results
+#     - action: utter_ask_an_essay
+#     - intent: deny_article
+#     - action: utter_ask_how_can_i_help_you
+#     - intent: Suggesting_supporting_materials
+
+# - story: ask_feeling_test-suicide_how_can_i_help_Ending_the_conversation
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - action: feeling_form
+#     - active_loop: feeling_form
+#     - slot_was_set:
+#       - requested_slot: feeling_1
+#     - slot_was_set:
+#       - requested_slot: feeling_2
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_thanking
+#     - action: utter_diagnosing
+#     # - action: action_call_classifier_api_2
+#     # - slot_was_set:
+#     #   - sentiment_1: depression
+#     - action: utter_launch_test
+#     - action: phq9_form
+#     - active_loop: phq9_form
+#     - slot_was_set:
+#         - requested_slot: little_interest
+#     - slot_was_set:
+#         - requested_slot: feeling_down
+#     - slot_was_set:
+#         - requested_slot: trouble_sleeping
+#     - slot_was_set:
+#         - requested_slot: feeling_tired
+#     - slot_was_set:
+#         - requested_slot: poor_appetite
+#     - slot_was_set:
+#         - requested_slot: feeling_bad_about_self
+#     - slot_was_set:
+#         - requested_slot: trouble_concentrating
+#     - slot_was_set:
+#         - requested_slot: moving_slow_or_fast
+#     - slot_was_set:
+#         - requested_slot: thoughts_of_self_harm
+#     - slot_was_set:
+#         - requested_slot: null
+#     - active_loop: null
+#     - action: action_phq9_form_result
+#     #- action: utter_result_of_test
+#     - action: utter_refer_to_doctor
+#     - intent: ask_docotor_prefer
+#     - action: doctor_prefer_form
+#     - active_loop: doctor_prefer_form
+#     - slot_was_set:
+#       - requested_slot: city_name
+#     - slot_was_set:
+#       - requested_slot: session_type
+#     - slot_was_set:
+#       - requested_slot: minPriceOnline
+#     - slot_was_set:
+#       - requested_slot: maxPriceOnline
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_doctor_results
+#     - action: utter_ask_an_essay
+#     - intent: deny_article
+#     - action: utter_ask_how_can_i_help_you
+#     - intent: Ending_the_conversation
+
+# - story: ask_feeling_test-suicide_how_can_i_help_supporting_materials_other
+#   steps:
+#     - intent: greet
+#     - action: utter_greet
+#     - action: feeling_form
+#     - active_loop: feeling_form
+#     - slot_was_set:
+#       - requested_slot: feeling_1
+#     - slot_was_set:
+#       - requested_slot: feeling_2
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_thanking
+#     - action: utter_diagnosing
+#     # - action: action_call_classifier_api_2
+#     # - slot_was_set:
+#     #   - sentiment_1: depression
+#     - action: utter_launch_test
+#     - action: phq9_form
+#     - active_loop: phq9_form
+#     - slot_was_set:
+#         - requested_slot: little_interest
+#     - slot_was_set:
+#         - requested_slot: feeling_down
+#     - slot_was_set:
+#         - requested_slot: trouble_sleeping
+#     - slot_was_set:
+#         - requested_slot: feeling_tired
+#     - slot_was_set:
+#         - requested_slot: poor_appetite
+#     - slot_was_set:
+#         - requested_slot: feeling_bad_about_self
+#     - slot_was_set:
+#         - requested_slot: trouble_concentrating
+#     - slot_was_set:
+#         - requested_slot: moving_slow_or_fast
+#     - slot_was_set:
+#         - requested_slot: thoughts_of_self_harm
+#     - slot_was_set:
+#         - requested_slot: null
+#     - active_loop: null
+#     - action: action_phq9_form_result
+#     #- action: utter_result_of_test
+#     - action: utter_refer_to_doctor
+#     - intent: ask_docotor_prefer
+#     - action: doctor_prefer_form
+#     - active_loop: doctor_prefer_form
+#     - slot_was_set:
+#       - requested_slot: city_name
+#     - slot_was_set:
+#       - requested_slot: session_type
+#     - slot_was_set:
+#       - requested_slot: minPriceOnline
+#     - slot_was_set:
+#       - requested_slot: maxPriceOnline
+#     - slot_was_set:
+#       - requested_slot: null
+#     - active_loop: null
+#     - action: utter_doctor_results
+#     - action: utter_ask_an_essay
+#     - intent: deny_article
+#     - action: utter_ask_how_can_i_help_you
+#     - intent: other
+#     - action: utter_other
+
+
+# # ########_______feeling_from_start__ocd___####
+# # - story: ask_feeling_test-ocd
+# #   steps:
+# #   - intent: greet
+# #   - action: utter_greet
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1 : ocd
+# #   - action: utter_launch_test
+# #   - action: ocd_form
+# #   - active_loop: ocd_form
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: control_over_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: control_over_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_ocd_form_result
+
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+# # - story: ask_for_doctor_form
+# #   steps:
+# #   - intent: ask_docotor_prefer
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+
+# # - story: ask_feeling_test-depression_deny_doctor
+# #   steps:
+# #   - intent: greet
+# #   - action: utter_greet
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1 : ocd
+# #   - action: utter_launch_test
+# #   - action: ocd_form
+# #   - active_loop: ocd_form
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: control_over_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: control_over_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_ocd_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_diagnosing
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1: ocd
+# #     - action: utter_launch_test
+# #     - action: ocd_form
+# #     - active_loop: ocd_form
+# #     - slot_was_set:
+# #       - requested_slot: time_spent_intrusive_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: conflict_with_activities
+# #     - slot_was_set:
+# #       - requested_slot: anxiety_level
+# #     - slot_was_set:
+# #       - requested_slot: effort_in_resisting_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: control_over_intrusive_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: time_spent_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: conflict_with_activities_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: anxiety_level_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: effort_in_resisting_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: control_over_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_ocd_form_result
+  
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: diagnosing
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_Conducting_a_self_assessment
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1: ocd
+# #     - action: utter_launch_test
+# #     - action: ocd_form
+# #     - active_loop: ocd_form
+# #     - slot_was_set:
+# #       - requested_slot: time_spent_intrusive_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: conflict_with_activities
+# #     - slot_was_set:
+# #       - requested_slot: anxiety_level
+# #     - slot_was_set:
+# #       - requested_slot: effort_in_resisting_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: control_over_intrusive_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: time_spent_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: conflict_with_activities_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: anxiety_level_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: effort_in_resisting_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: control_over_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_ocd_form_result
+  
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: Conducting_a_self_assessment
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_supporting_materials
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1: ocd
+# #     - action: utter_launch_test
+# #     - action: ocd_form
+# #     - active_loop: ocd_form
+# #     - slot_was_set:
+# #       - requested_slot: time_spent_intrusive_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: conflict_with_activities
+# #     - slot_was_set:
+# #       - requested_slot: anxiety_level
+# #     - slot_was_set:
+# #       - requested_slot: effort_in_resisting_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: control_over_intrusive_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: time_spent_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: conflict_with_activities_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: anxiety_level_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: effort_in_resisting_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: control_over_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_ocd_form_result
+  
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: Suggesting_supporting_materials
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_Ending_the_conversation
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1: ocd
+# #     - action: utter_launch_test
+# #     - action: ocd_form
+# #     - active_loop: ocd_form
+# #     - slot_was_set:
+# #       - requested_slot: time_spent_intrusive_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: conflict_with_activities
+# #     - slot_was_set:
+# #       - requested_slot: anxiety_level
+# #     - slot_was_set:
+# #       - requested_slot: effort_in_resisting_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: control_over_intrusive_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: time_spent_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: conflict_with_activities_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: anxiety_level_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: effort_in_resisting_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: control_over_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_ocd_form_result
+  
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: Ending_the_conversation
+
+# # - story: ask_feeling_test-suicide_how_can_i_help_supporting_materials_other
+# #   steps:
+# #     - intent: greet
+# #     - action: utter_greet
+# #     - action: feeling_form
+# #     - active_loop: feeling_form
+# #     - slot_was_set:
+# #       - requested_slot: feeling_1
+# #     - slot_was_set:
+# #       - requested_slot: feeling_2
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_thanking
+# #     - action: utter_diagnosing
+# #     - action: action_call_classifier_api_2
+# #     - slot_was_set:
+# #       - sentiment_1: ocd
+# #     - action: utter_launch_test
+# #     - action: ocd_form
+# #     - active_loop: ocd_form
+# #     - slot_was_set:
+# #       - requested_slot: time_spent_intrusive_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: conflict_with_activities
+# #     - slot_was_set:
+# #       - requested_slot: anxiety_level
+# #     - slot_was_set:
+# #       - requested_slot: effort_in_resisting_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: control_over_intrusive_thoughts
+# #     - slot_was_set:
+# #       - requested_slot: time_spent_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: conflict_with_activities_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: anxiety_level_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: effort_in_resisting_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: control_over_compulsive_behaviors
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: action_ocd_form_result
+  
+# #     #- action: utter_result_of_test
+# #     - action: utter_refer_to_doctor
+# #     - intent: ask_docotor_prefer
+# #     - action: doctor_prefer_form
+# #     - active_loop: doctor_prefer_form
+# #     - slot_was_set:
+# #       - requested_slot: city_name
+# #     - slot_was_set:
+# #       - requested_slot: session_type
+# #     - slot_was_set:
+# #       - requested_slot: minPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: maxPriceOnline
+# #     - slot_was_set:
+# #       - requested_slot: null
+# #     - active_loop: null
+# #     - action: utter_doctor_results
+# #     - action: utter_ask_an_essay
+# #     - intent: deny_article
+# #     - action: utter_ask_how_can_i_help_you
+# #     - intent: other
+# #     - action: utter_other
+    
+
+
+
+# # #___________new_2______________#
+# # - story: ask_gad_test_deny_doctor_accept_article
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+# #   - intent: mood_great
+# #   - action: utter_great
+# #   - action: utter_general_advice
+# #   - intent: express_gratitude
+# #   - action: utter_express_gratitude
+
+# # - story: ask_gad_test_accept_doctor_accept_article
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_view_doctor_results
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+# #   - intent: ask_feeling_test
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - intent: mood_great
+# #   - action: utter_great
+# #   - action: utter_general_advice
+# #   - intent: express_gratitude
+# #   - action: utter_express_gratitude
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: ocd
+# #   - action: utter_launch_test
+# #   - action: ocd_form
+# #   - active_loop: ocd_form
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: control_over_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: control_over_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_ocd_form_result
+
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+# # - story: ask_gad_test_accept_doctor_accept_article
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_view_doctor_results
+# #   - action: utter_doctor_results
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - intent: mood_great
+# #   - action: utter_great
+# #   - action: utter_general_advice
+# #   - intent: express_gratitude
+# #   - action: utter_express_gratitude
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: ocd
+# #   - action: utter_launch_test
+# #   - action: ocd_form
+# #   - active_loop: ocd_form
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: control_over_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: control_over_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_ocd_form_result
+
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_suicide
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - intent: mood_great
+# #   - action: utter_great
+# #   - action: utter_general_advice
+# #   - intent: express_gratitude
+# #   - action: utter_express_gratitude
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: ocd
+# #   - action: utter_launch_test
+# #   - action: ocd_form
+# #   - active_loop: ocd_form
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: control_over_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: control_over_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_ocd_form_result
+
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+  
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_ocd
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: ocd
+# #   - action: utter_launch_test
+# #   - action: ocd_form
+# #   - active_loop: ocd_form
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: control_over_intrusive_thoughts
+# #   - slot_was_set:
+# #     - requested_slot: time_spent_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: conflict_with_activities_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: anxiety_level_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: effort_in_resisting_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: control_over_compulsive_behaviors
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_ocd_form_result
+
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - intent: mood_great
+# #   - action: utter_great
+# #   - action: utter_general_advice
+# #   - intent: express_gratitude
+# #   - action: utter_express_gratitude
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_depression
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: depression
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   - slot_was_set:
+# #       - requested_slot: feeling_down
+# #   - slot_was_set:
+# #       - requested_slot: trouble_sleeping
+# #   - slot_was_set:
+# #       - requested_slot: feeling_tired
+# #   - slot_was_set:
+# #       - requested_slot: poor_appetite
+# #   - slot_was_set:
+# #       - requested_slot: feeling_bad_about_self
+# #   - slot_was_set:
+# #       - requested_slot: trouble_concentrating
+# #   - slot_was_set:
+# #       - requested_slot: moving_slow_or_fast
+# #   - slot_was_set:
+# #       - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_phq9_form_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - intent: mood_great
+# #   - action: utter_great
+# #   - action: utter_general_advice
+# #   - intent: express_gratitude
+# #   - action: utter_express_gratitude
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_diagnosing_anxiety
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: anxiety
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: read_article
+# #   - action: action_show_article
+# #   - action: utter_read_article
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - intent: mood_great
+# #   - action: utter_great
+# #   - action: utter_general_advice
+# #   - intent: express_gratitude
+# #   - action: utter_express_gratitude
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ask_docotor_prefer
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - intent: mood_great
+# #   - action: utter_great
+# #   - action: utter_general_advice
+# #   - intent: express_gratitude
+# #   - action: utter_express_gratitude
+
+# # - story: ask_gad_test_deny_doctor_deny_article_ending_conversation
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: Ending_the_conversation
+# #   - action: utter_end_conversation
+
+# # - story: ask_gad_test_deny_doctor_deny_article_other
+# #   steps:
+# #   - intent: ask_gad_test
+# #   - action: utter_providing_test
+# #   - action: utter_launch_test
+# #   - action: utter_gad_test
+# #   - action: gad_form
+# #   - active_loop: gad_form
+# #   - slot_was_set:
+# #       - requested_slot: feeling_nervous
+# #   - slot_was_set:
+# #       - requested_slot: unable_to_control_worrying
+# #   - slot_was_set:
+# #       - requested_slot: worrying_too_much
+# #   - slot_was_set:
+# #       - requested_slot: trouble_relaxing
+# #   - slot_was_set:
+# #       - requested_slot: restlessness
+# #   - slot_was_set:
+# #       - requested_slot: easily_irritable
+# #   - slot_was_set:
+# #       - requested_slot: feeling_afraid
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_gad_form_result
+
+# #   #  - action: action_gad_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: deny_doctor
+# #   - action: utter_ask_an_essay
+# #   - intent: deny_article
+# #   - action: utter_ask_how_can_i_help_you
+# #   - intent: other
+# #   - action: utter_other
+# #   - intent: diagnosing
+# #   - action: feeling_form
+# #   - active_loop: feeling_form
+# #   - slot_was_set:
+# #     - requested_slot: feeling_1
+# #   - slot_was_set:
+# #     - requested_slot: feeling_2
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_thanking
+# #   - action: utter_diagnosing
+# #   - action: action_call_classifier_api_2
+# #   - slot_was_set:
+# #     - sentiment_1: suicide
+# #   - action: utter_launch_test
+# #   - action: suicide_form
+# #   - active_loop: suicide_form
+# #   - slot_was_set:
+# #     - requested_slot: death_wish
+# #   - slot_was_set:
+# #     - requested_slot: actual_kill_thought
+# #   - slot_was_set:
+# #     - requested_slot: thinking_how_to_do
+# #   - slot_was_set:
+# #     - requested_slot: suicidal_thoughts_with_intention
+# #   - slot_was_set:
+# #     - requested_slot: planning_details_get_rid_of_life
+# #   - slot_was_set:
+# #     - requested_slot: started_doing_anything_end_life
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: action_suicide_test_result
+# #   #- action: utter_result_of_test
+# #   - action: utter_refer_to_doctor
+# #   - intent: ask_docotor_prefer
+# #   - action: utter_moving_to_doctor_form
+# #   - action: doctor_prefer_form
+# #   - active_loop: doctor_prefer_form
+# #   - slot_was_set:
+# #     - requested_slot: city_name
+# #   - slot_was_set:
+# #     - requested_slot: session_type
+# #   - slot_was_set:
+# #     - requested_slot: minPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: maxPriceOnline
+# #   - slot_was_set:
+# #     - requested_slot: null
+# #   - active_loop: null
+# #   - action: utter_doctor_results
+# #   - intent: mood_great
+# #   - action: utter_great
+# #   - action: utter_general_advice
+# #   - intent: express_gratitude
+# #   - action: utter_express_gratitude
+
+
+# # - story: phq9_path
+# #   steps:
+# #   - intent: ask_phq9_test
+# #   - action: utter_launch_test
+# #   - action: phq9_form
+# #   - active_loop: phq9_form
+# #   - slot_was_set:
+# #       - requested_slot: little_interest
+# #   # - slot_was_set:
+# #   #     - requested_slot: feeling_down
+# #   # - slot_was_set:
+# #   #     - requested_slot: trouble_sleeping
+# #   # - slot_was_set:
+# #   #     - requested_slot: feeling_tired
+# #   # - slot_was_set:
+# #   #     - requested_slot: poor_appetite
+# #   # - slot_was_set:
+# #   #     - requested_slot: feeling_bad_about_self
+# #   # - slot_was_set:
+# #   #     - requested_slot: trouble_concentrating
+# #   # - slot_was_set:
+# #   #     - requested_slot: moving_slow_or_fast
+# #   # - slot_was_set:
+# #   #     - requested_slot: thoughts_of_self_harm
+# #   - slot_was_set:
+# #       - requested_slot: null
+# #   - active_loop: null
+# #   - intent: dont_want_to_continue
+# #   - action: utter_ask_how_can_i_help_you
+# #   # - action: utter_refer_to_doctor
+# #   # - intent: deny
+# #   # - action: utter_ask_an_essay
+# #   # - intent: affirm
+# #   # - action: action_show_article
+# #   # - action: utter_if_you_have_questions
+
+
+
+
+# # ##############################
+
+# # # - story: ask_feeling_test-suicide
+# # #   steps:
+# # #   - intent: ask_feeling_test
+# # #   - action: feeling_form
+# # #   - active_loop: feeling_form
+# # #   - slot_was_set:
+# # #     - requested_slot: feeling_1
+# # #   - slot_was_set:
+# # #     - requested_slot: feeling_2
+# # #   - slot_was_set:
+# # #     - requested_slot: null
+# # #   - active_loop: null
+# # #   - action: utter_diagnosing
+# # #   - action: action_call_classifier_api_2
+# # #   - slot_was_set:
+# # #     - sentiment_1 : suicide
+# # #   # - action: utter_launch_suicide_test
+# # #   # - action: suicide_form
+# # #   # - active_loop: suicide_form  # Add this line to initiate the suicide_form
+# # #   - action: utter_launch_test
+# # #   - action: suicide_form
+# # #   - active_loop: suicide_form
+# # #   - slot_was_set:
+# # #     - requested_slot: death_wish
+# # #   - slot_was_set:
+# # #     - requested_slot: actual_kill_thought
+# # #   - slot_was_set:
+# # #     - requested_slot: thinking_how_to_do
+# # #   - slot_was_set:
+# # #     - requested_slot: suicidal_thoughts_with_intention
+# # #   - slot_was_set:
+# # #     - requested_slot: planning_details_get_rid_of_life
+# # #   - slot_was_set:
+# # #     - requested_slot: started_doing_anything_end_life
+# # #   - slot_was_set:
+# # #     - requested_slot: null
+# # #   - active_loop: null
+# # #   # #- action: utter_result_of_test
+# # #   # - action: utter_refer_to_doctor
+  
+# # # #here 
+# # # - story: ask_feeling_test_ocd
+# # #   steps:
+# # #   - intent: ask_feeling_test
+# # #   - action: feeling_form
+# # #   - active_loop: feeling_form
+# # #   - slot_was_set:
+# # #     - requested_slot: feeling_1
+# # #   - slot_was_set:
+# # #     - requested_slot: feeling_2
+# # #   - slot_was_set:
+# # #     - requested_slot: null
+# # #   - active_loop: null
+# # #   - action: utter_diagnosing
+# # #   - action: action_call_classifier_api_2
+# # #   - slot_was_set:
+# # #     - sentiment_1 : ocd
+# # #   - action: utter_launch_test
+# # #   - action: ocd_form
+# # #   - active_loop: ocd_form
+# # #   - slot_was_set:
+# # #     - requested_slot: time_spent_intrusive_thoughts
+# # #   - slot_was_set:
+# # #     - requested_slot: conflict_with_activities
+# # #   - slot_was_set:
+# # #     - requested_slot: anxiety_level
+# # #   - slot_was_set:
+# # #     - requested_slot: effort_in_resisting_thoughts
+# # #   - slot_was_set:
+# # #     - requested_slot: control_over_intrusive_thoughts
+# # #   - slot_was_set:
+# # #     - requested_slot: time_spent_compulsive_behaviors
+
+# # #   - slot_was_set:
+# # #     - requested_slot: conflict_with_activities_compulsive_behaviors
+
+# # #   - slot_was_set:
+# # #     - requested_slot: anxiety_level_compulsive_behaviors
+
+# # #   - slot_was_set:
+# # #     - requested_slot: effort_in_resisting_behaviors
+
+# # #   - slot_was_set:
+# # #     - requested_slot: control_over_compulsive_behaviors
+
+# # #   - slot_was_set:
+# # #     - requested_slot: null
+# # #   - active_loop: null
+
+# # # 
+# # #   - action: utter_ask_an_essay
+# # #   - intent: affirm
+# # #   - action: action_get_random_article
+# # #   - action: utter_did_that_help
+# # #   - intent: affirm
+# # #   - action: utter_good_article
+
+# # # - story: after_suicide_ok
+# # #   steps:
+# # #   - action: utter_suicide_case
+# # #   - action: utter_ask_an_essay
+# # #   - intent: affirm
+# # #   - action: action_get_random_article
+# # #   - action: utter_did_that_help
+# # #   - intent: affirm
+# # #   - action: utter_good_article
+
+# # # - story: after_suicide_not_ok
+# # #   steps:
+# # #   - action: utter_suicide_case
+# # #   - action: utter_ask_an_essay
+# # #   - intent: deny
+# # #   # - action: utter_refer_to_doctor
+# # #   # - intent: affirm
+# # #   - action: utter_general_advice
+
+# # # - story: ask_feeling_test-ocd
+# # #   steps:
+# # #   - intent: ask_feeling_test
+# # #   - action: feeling_form
+# # #   - active_loop: feeling_form
+# # #   - slot_was_set:
+# # #     - requested_slot: feeling_1
+# # #   - slot_was_set:
+# # #     - requested_slot: feeling_2
+# # #   - slot_was_set:
+# # #     - requested_slot: null
+# # #   - active_loop: null
+# # #   - action: utter_diagnosing
+# # #   - action: action_call_classifier_api_2
+# # #   - slot_was_set:
+# # #     - sentiment_1 : ocd
+# # #   - action: utter_launch_ocd_test
+
+
+# # # - story: ask_feeling_test-depression
+# # #   steps:
+# # #   - intent: ask_feeling_test
+# # #   - action: feeling_form
+# # #   - active_loop: feeling_form
+# # #   - slot_was_set:
+# # #     - requested_slot: feeling_1
+# # #   - slot_was_set:
+# # #     - requested_slot: feeling_2
+# # #   - slot_was_set:
+# # #     - requested_slot: null
+# # #   - active_loop: null
+# # #   - action: utter_diagnosing
+# # #   - action: action_call_classifier_api_2
+# # #   - slot_was_set:
+# # #     - sentiment_1 : depression
+# # #   - action: utter_launch_depression_test
+
+
+# # # - story: ask_feeling_test-anxiety
+# # #   steps:
+# # #   - intent: ask_feeling_test
+# # #   - action: feeling_form
+# # #   - active_loop: feeling_form
+# # #   - slot_was_set:
+# # #     - requested_slot: feeling_1
+# # #   - slot_was_set:
+# # #     - requested_slot: feeling_2
+# # #   - slot_was_set:
+# # #     - requested_slot: null
+# # #   - active_loop: null
+# # #   - action: utter_diagnosing
+# # #   - action: action_call_classifier_api_2
+# # #   - slot_was_set:
+# # #     - sentiment_1 : anxiety
+# # #   - action: utter_launch_anxiety_test  
+
+
+
+# # #________trial__________
+
+# # # - story: ask_feeling_test-depression
+# # #   steps:
+# # #   - intent: ask_classifier
+# # #   - action: action_call_classifier_api_2
+# # #   # - slot_was_set:
+# # #   #   - depression: true
+# # #   - action: utter_mental_issue
+# # #   - slot_was_set:
+# # #     - depression: true
+# # #   - action: utter_launch_depression_test
+# # #   - action: utter_general_advice
+
+# # # - story: ask_feeling_test_depression_test
+# # #   steps:
+# # #   - intent: ask_classifier
+# # #   - action: action_call_classifier_api_2
+# # #   # - slot_was_set:
+# # #   #   - depression: true
+# # #   - action: utter_mental_issue
+# # #   - slot_was_set:
+# # #     - depression: false
+# # #   - action: utter_launch_anxiety_test
+# # #   - action: utter_mental_issue
+
+
+# # # - story: ask_ocd_test
+# # #   steps:
+# # #   - intent: ask_ocd_test
+# # #   - action: utter_launch_test
+# # #   - action: ocd_form
+# # #   - active_loop: ocd_form
+# # #   - slot_was_set:
+# # #     - requested_slot: time_spent_intrusive_thoughts
+# # #   - slot_was_set:
+# # #     - requested_slot: conflict_with_activities
+# # #   - slot_was_set:
+# # #     - requested_slot: anxiety_level
+# # #   - slot_was_set:
+# # #     - requested_slot: effort_in_resisting_thoughts
+# # #   - slot_was_set:
+# # #     - requested_slot: control_over_intrusive_thoughts
+# # #   - slot_was_set:
+# # #     - requested_slot: time_spent_compulsive_behaviors
+# # #   - slot_was_set:
+# # #     - requested_slot: conflict_with_activities_compulsive_behaviors
+# # #   - slot_was_set:
+# # #     - requested_slot: anxiety_level_compulsive_behaviors
+# # #   - slot_was_set:
+# # #     - requested_slot: effort_in_resisting_behaviors
+# # #   - slot_was_set:
+# # #     - requested_slot: control_over_compulsive_behaviors
+# # #   - slot_was_set:
+# # #     - requested_slot: null
+# # #   - active_loop: null
+
+# # #   - action: utter_ocd_result
+# # #   - action: utter_refer_to_doctor
+# # #   - intent: deny
+# # #   - action: utter_ask_an_essay
+# # #   - intent: affirm
+# # #   - action: action_get_random_article
+# # #   - action: utter_did_that_help
+# # #   - intent: affirm
+# # #   - action: utter_good_article
+  
+
+# # # - story: ask_doctor_prefer
+# # #   steps:
+# # #   - intent: ask_docotor_prefer
+# # #   - action: doctor_prefer_form
+# # #   - active_loop: doctor_prefer_form
+# # #   - slot_was_set:
+# # #     - requested_slot: city_name
+# # #   - slot_was_set:
+# # #     - requested_slot: session_type
+# # #   - slot_was_set:
+# # #     - requested_slot: minPriceOnline
+# # #   - slot_was_set:
+# # #     - requested_slot: maxPriceOnline
+# # #   - slot_was_set:
+# # #     - requested_slot: null
+# # #   - active_loop: null
+
+# # #   - action: utter_doctor
+# # #   - action: utter_doctor_results
+# # #   - intent: deny
+# # #   - action: utter_ask_an_essay
+# # #   - intent: affirm
+# # #   - action: action_get_random_article
+# # #   - action: utter_did_that_help
+# # #   - intent: affirm
+# # #   - action: utter_good_article
+# - story: interactive_story_1
+#   steps:
+#   - intent: greet
+#   - action: utter_greet
+#   - action: feeling_form
+#   - active_loop: feeling_form
+#   - slot_was_set:
+#     - requested_slot: feeling_1
+#   - intent: mood_unhappy
+#   - slot_was_set:
+#     - feeling_1: أحس باكتئاب حاد في نفسيتي ولم أعد قادرة على التواصل مع زوجي فما الحل
+#   - action: feeling_form
+#   - slot_was_set:
+#     - feeling_1: أحس باكتئاب حاد في نفسيتي ولم أعد قادرة على التواصل مع زوجي فما الحل
+#   - slot_was_set:
+#     - requested_slot: feeling_2
+#   - intent: mood_unhappy
+#   - slot_was_set:
+#     - feeling_2: ضغط وانتقادات من كل الجهات فبدون إدراك أعطيت الأولوية للأمور الثانوية نجحت في لاثانوية العاملة بمعدل سيء فصدمت ولم أرض بأن ألتحق بكلية عادية فجلست في لابيت أنتظر العام المقبل مضت السنين وحصلت على رفضل لاستلام الفيزا أقراني يستمورن في الدراسة وأنا واقفة مكاني حزن شديد واكتئاب من هذه الحياة
+#   - action: feeling_form
+#   - slot_was_set:
+#     - feeling_2: ضغط وانتقادات من كل الجهات فبدون إدراك أعطيت الأولوية للأمور الثانوية نجحت في لاثانوية العاملة بمعدل سيء فصدمت ولم أرض بأن ألتحق بكلية عادية فجلست في لابيت أنتظر العام المقبل مضت السنين وحصلت على رفضل لاستلام الفيزا أقراني يستمورن في الدراسة وأنا واقفة مكاني حزن شديد واكتئاب من هذه الحياة
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: utter_thanking
+#   - action: utter_diagnosing
+#   - action: utter_launch_test
+#   - action: phq9_form
+#   - active_loop: phq9_form
+#   - slot_was_set:
+#     - requested_slot: little_interest
+#   - intent: optionA
+#   - slot_was_set:
+#     - little_interest: /optionA
+#   - action: phq9_form
+#   - slot_was_set:
+#     - requested_slot: feeling_down
+#   - intent: optionA
+#   - slot_was_set:
+#     - feeling_down: /optionA
+#   - action: phq9_form
+#   - slot_was_set:
+#     - requested_slot: trouble_sleeping
+#   - intent: optionA
+#   - slot_was_set:
+#     - trouble_sleeping: /optionA
+#   - action: phq9_form
+#   - slot_was_set:
+#     - requested_slot: feeling_tired
+#   - intent: optionA
+#   - slot_was_set:
+#     - feeling_tired: /optionA
+#   - action: phq9_form
+#   - slot_was_set:
+#     - requested_slot: poor_appetite
+#   - intent: optionA
+#   - slot_was_set:
+#     - poor_appetite: /optionA
+#   - action: phq9_form
+#   - slot_was_set:
+#     - requested_slot: feeling_bad_about_self
+#   - intent: optionA
+#   - slot_was_set:
+#     - feeling_bad_about_self: /optionA
+#   - action: phq9_form
+#   - slot_was_set:
+#     - requested_slot: trouble_concentrating
+#   - intent: optionA
+#   - slot_was_set:
+#     - trouble_concentrating: /optionA
+#   - action: phq9_form
+#   - slot_was_set:
+#     - requested_slot: moving_slow_or_fast
+#   - intent: optionA
+#   - slot_was_set:
+#     - moving_slow_or_fast: /optionA
+#   - action: phq9_form
+#   - slot_was_set:
+#     - requested_slot: thoughts_of_self_harm
+#   - intent: optionA
+#   - slot_was_set:
+#     - thoughts_of_self_harm: /optionA
+#   - action: phq9_form
+#   - slot_was_set:
+#     - requested_slot: null
+#   - active_loop: null
+#   - action: action_phq9_form_result
+#   - action: utter_refer_to_doctor
+#   - intent: ask_docotor_prefer
+#   - action: doctor_prefer_form
+#   - active_loop: doctor_prefer_form
+#   - slot_was_set:
+#     - requested_slot: city_name
