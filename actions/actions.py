@@ -66,7 +66,7 @@ class CallClassifierAPIAction(Action):
         combined_feelings = f"{feeling_1_value} {feeling_2_value}"
 
         # Send the concatenated text to the API
-        response = requests.post('http://10.156.0.5:8080/predict', json={'text': combined_feelings})
+        response = requests.post('http://34.107.44.36:8080/predict', json={'text': combined_feelings})
         print(response)
         # Process the API response
         if response.status_code == 200:
