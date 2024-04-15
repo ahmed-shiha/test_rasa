@@ -101,7 +101,7 @@ class CallClassifierAPIAction_2(Action):
 
         # Send the concatenated text to the API
         print('run classifier')
-        response = requests.post('http://localhost:8080/predict', json={'text': combined_feelings})
+        response = requests.post('https://55cc-45-241-137-207.ngrok-free.app/predict', json={'text': combined_feelings})
         print(response)
         # Process the API response
         if response.status_code == 200:
