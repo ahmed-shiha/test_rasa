@@ -66,7 +66,7 @@ class CallClassifierAPIAction(Action):
         combined_feelings = f"{feeling_1_value} {feeling_2_value}"
 
         # Send the concatenated text to the API
-        response = requests.post('https://55cc-45-241-137-207.ngrok-free.app/predict', json={'text': combined_feelings})
+        response = requests.post('http://localhost:8080/predict', json={'text': combined_feelings})
         print(response)
         # Process the API response
         if response.status_code == 200:
@@ -101,7 +101,7 @@ class CallClassifierAPIAction_2(Action):
 
         # Send the concatenated text to the API
         print('run classifier')
-        response = requests.post('https://55cc-45-241-137-207.ngrok-free.app/predict', json={'text': combined_feelings})
+        response = requests.post('http://localhost:8080/predict', json={'text': combined_feelings})
         print(response)
         # Process the API response
         if response.status_code == 200:
@@ -866,7 +866,7 @@ class ActionShowVideo(Action):
         sentiment_1_capitalized = sentiment_1.capitalize()
 
         # Construct the API URL with the capitalized sentiment_1 value
-        api_url = f"http://192.168.1.6:8000/api/youtube_by_category?name={sentiment_1_capitalized}"
+        api_url = f"https://backend.ihayanow.com/api/youtube_by_category?name={sentiment_1_capitalized}"
 
         # Make a request to the API
         response = requests.get(api_url)
@@ -917,7 +917,7 @@ class ActionShowTips(Action):
         sentiment_1_capitalized = sentiment_1.capitalize()
 
         # Construct the API URL with the capitalized sentiment_1 value
-        api_url = f"http://192.168.1.6:8000/api/tips_by_category?name={sentiment_1_capitalized}"
+        api_url = f"https://backend.ihayanow.com/api/tips_by_category?name={sentiment_1_capitalized}"
 
         # Make a request to the API
         response = requests.get(api_url)
@@ -969,7 +969,7 @@ class ActionShowArticle(Action):
         sentiment_1_capitalized = sentiment_1.capitalize()
 
         # Construct the API URL with the capitalized sentiment_1 value
-        api_url = f"http://192.168.1.6:8000/api/article_by_category?name={sentiment_1_capitalized}"
+        api_url = f"https://backend.ihayanow.com/api/article_by_category?name={sentiment_1_capitalized}"
 
         # Make a request to the API
         response = requests.get(api_url)
@@ -981,16 +981,20 @@ class ActionShowArticle(Action):
 
             # Check if there is at least one article in the response
             if article_data:
+                article = article_data[0]['knowledgebase']
+                article_title = article['title']
+                doctor_name = article['author']
+                article_link = article_data[0]['url']
                 # Get the first article details
-                article_details = article_data[0]
+                # article_details = article_data[0]
 
-                # Extract relevant information
-                article_title = article_details["knowledgebase"]["title"]
-                article_link = article_details["knowledgebase"]["url"]
+                # # Extract relevant information
+                # article_title = article_details["knowledgebase"]["title"]
+                # article_link = article_details["knowledgebase"]["url"]
 
                 # Construct the message to be sent to the user
                 message = (
-                    f"يمكنك قراءة المقال التالي:\n"
+                    f"يمكنك قراءة المقال التالي للدكتور {doctor_name}:\n"
                     f"[{article_title}]({article_link})"
                 )
 
