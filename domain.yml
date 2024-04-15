@@ -9,7 +9,6 @@ intents:
 - affirm
 - ask_classifier
 - ask_docotor_prefer
-- ask_feeling_test
 - ask_gad_test
 - ask_ocd_test
 - ask_phq9_test
@@ -35,7 +34,6 @@ intents:
 responses:
   utter_great:
   - text: يسعدني سماع ذلك ، أتمنى لك دوام الصحةوالعافية
-    channel: myio
   utter_greet:
   - text: مرحبا بك . أنا سلام بوت للتقييم والمساعدة النفسية
   utter_Assessment_Start:
@@ -108,7 +106,7 @@ responses:
   utter_view_doctor_results:
   - text: استنادًا إلى تفضيلاتك، إليك بيانات الأطباء المتناسبين الذين يمكنهم مساعدتك . ويمكنك الحصول على المزيد من المعلومات عن كل طبيب من خلال الصفحة الخاصة به بالضغط على الرابط
   utter_doctor_results:
-  - text: د. هبة الزيني - الفردوس - يمكنك الدخول إلى صفحة الحجز  [من هنا] (https://www.google.com/)
+  - text: د. هبة الزيني - يمكنك الدخول إلى صفحة الحجز [من هنا] (https://www.ihayanow.com/guest-therapist-page)
   utter_ask_doctor:
   - buttons:
     - payload: /affirm

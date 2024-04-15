@@ -56,24 +56,6 @@ rules:
   #- action: utter_result_of_test
   - action: utter_refer_to_doctor
 
-# - rule: ask_docotor_prefer
-#   steps:
-#   - intent: ask_docotor_prefer
-#   - action: doctor_prefer_form
-#   - active_loop: doctor_prefer_form
-#   - slot_was_set:
-#     - requested_slot: city_name
-#   - slot_was_set:
-#     - requested_slot: session_type
-#   - slot_was_set:
-#     - requested_slot: minPriceOnline
-#   - slot_was_set:
-#     - requested_slot: maxPriceOnline
-#   - slot_was_set:
-#     - requested_slot: null
-#   - active_loop: null
-#   - action: utter_doctor_results
-#   - action: utter_ask_an_essay
 
 
 - rule: deny_article
@@ -188,6 +170,8 @@ rules:
   - slot_was_set:
     - requested_slot: null
   - active_loop: null
+  - action: utter_doctor_results
+  - action: utter_ask_an_essay
 
 - rule: suicide
   steps:
